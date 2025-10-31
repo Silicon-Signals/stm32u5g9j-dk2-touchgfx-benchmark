@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_SPC9" Alignment="Left" TypographyId="string">
+        <Translation Language="GB">Text Scroll Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_LQ03" Alignment="Left" TypographyId="string">
+        <Translation Language="GB">SVG Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_EHCD" Alignment="Left" TypographyId="string">
+        <Translation Language="GB">Static Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_BOHL" Alignment="Left" TypographyId="string">
+        <Translation Language="GB">2D Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_2RJB" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_S0VO" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZQ54" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_0JAM" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_R12B" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_47G3" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_YFYW" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_FCQV" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_KUK7" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_TWE8" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_JARG" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_46W4" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_E3LL" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_DVO8" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_OCCW" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_TXIP" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_M5LV" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_JR9R" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_9QGM" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_H12C" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_XVTC" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_M7I7" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_KQV1" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_IXIW" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_FZI8" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_2Y3Y" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_WX31" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_SP5A" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_4UPV" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_281Z" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_QEYZ" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_8H2Z" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_2NKS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_AU0Z" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_JAQ2" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_1CZT" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_RKML" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_1H3Q" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_XZWC" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_IZHX" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_D2HL" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_1M7G" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_R9Z1" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">STM32U5G9J-DK2 </Translation>
+      </Text>
+      <Text Id="__SingleUse_LTDX" Alignment="Left" TypographyId="Text_scroll">
+        <Translation Language="GB">          The STM32U5G9J-DK2 Discovery kit is a complete demonstration and development platform for the STM32U5G9ZJT6Q microcontroller, featuring an Arm® Cortex®‑M33 core with Arm® TrustZone®.&#10; &#10;          Leveraging the innovative ultra-low power-oriented features, 3 Mbytes of embedded SRAM, 4 Mbytes of embedded flash memory, and rich graphics features, the STM32U5G9J-DK2 Discovery kit enables users to prototype applications with state-of-the-art energy efficiency, as well as providing stunning and optimized graphics rendering with the support of a 2.5D NeoChrom accelerator, Chrom-ART Accelerator, and Chrom-GRC™ MMU.&#10; &#10;          The STM32U5G9J-DK2 Discovery kit integrates a full range of hardware features that help the user evaluate all the peripherals, such as a 5" RGB 800x480 pixels TFT colored LCD module with a 24‑bit RGB interface and capacitive touch panel, USB Type-C® HS, Octo‑SPI flash memory device, ARDUINO®, and STLINK-V3EC (USART console).&#10; &#10;          The STM32U5G9J-DK2 Discovery kit integrates an STLINK-V3EC embedded in-circuit debugger and programmer for the STM32 microcontroller with a  USB Virtual COM port bridge and comes with the STM32CubeU5 MCU Package, which provides an STM32 comprehensive software HAL library as well as various software examples.&#10; &#10;          Ultra-low-power STM32U5G9ZJT6Q microcontroller based on the Arm® Cortex®‑M33 core with Arm® TrustZone®, featuring 4 Mbytes of flash memory, 3 Mbytes of SRAM, and SMPS, in an LQFP144 package.&#10; &#10;          Support for the NeoChrom VG GPU New processing unit optimizes rendering of vector graphics and animations such as flips, spins, scaling and more, vastly increasing the number of frames per second - fully integrated in X-CUBE-TOUCHGFX.&#10; &#10;          The STM32U5G9J-DK Discovery 2 kit relies on an HSE oscillator (16 MHz crystal) and an LSE oscillator (32.768 kHz crystal) as clock references. Using the HSE (instead of HSI) is mandatory to manage the DSI interface for the LCD module and the USB high‑speed interface.&#10; &#10;          The STM32U5G9J Discovery 2 kit has up to 4 USARTs, 2 UARTs, and 1 LPUART. The Zephyr console output is assigned to USART1 which connected to the onboard ST-LINK/V3.0. Virtual COM port interface. Default communication settings are 115200 8N1.&#10; &#10;          The demonstration software, included in the STM32Cube MCU Package corresponding to the on-board microcontroller, is preloaded in the STM32 flash memory for easy demonstration of the device peripherals in standalone mode. The latest versions of the demonstration source code and associated documentation can be downloaded from www.st.com.&#10;&#10; </Translation>
+      </Text>
+      <Text Id="__SingleUse_EWTM" Alignment="Center" TypographyId="button_lable">
+        <Translation Language="GB">Text&#10;Scroll</Translation>
+      </Text>
+      <Text Id="__SingleUse_3U5U" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">START</Translation>
+      </Text>
+      <Text Id="__SingleUse_147W" Alignment="Center" TypographyId="button_lable">
+        <Translation Language="GB">SVG&#10;Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_SVA2" Alignment="Left" TypographyId="string">
+        <Translation Language="GB">Video Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_TN6S" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">CPU Load %</Translation>
+      </Text>
+      <Text Id="__SingleUse_X1YP" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Render TIme (Frame Latency)</Translation>
+      </Text>
+      <Text Id="__SingleUse_2G94" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Heap Usage</Translation>
+      </Text>
+      <Text Id="__SingleUse_P0AJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Stack Usage</Translation>
+      </Text>
+      <Text Id="__SingleUse_EFF4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Frame Rate (FPS)</Translation>
+      </Text>
+      <Text Id="__SingleUse_5360" Alignment="Left" TypographyId="Default_bold">
+        <Translation Language="GB">Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_WJRF" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_VEM3" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">&lt;number&gt; ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_VXAD" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_NT68" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">&lt;number&gt; KB</Translation>
+      </Text>
+      <Text Id="__SingleUse_GFGI" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q895" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">&lt;number&gt; KB</Translation>
+      </Text>
+      <Text Id="__SingleUse_NR8E" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_U2PI" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">&lt;number&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AFVY" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_O6I8" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">&lt;number&gt; %</Translation>
+      </Text>
+      <Text Id="__SingleUse_J3M9" Alignment="Center" TypographyId="button_lable">
+        <Translation Language="GB">Video&#10;Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q0B2" Alignment="Center" TypographyId="button_lable">
+        <Translation Language="GB">2D</Translation>
+      </Text>
+      <Text Id="__SingleUse_HL3O" Alignment="Center" TypographyId="button_lable">
+        <Translation Language="GB">SVG</Translation>
+      </Text>
+      <Text Id="__SingleUse_OQ7W" Alignment="Center" TypographyId="button_lable">
+        <Translation Language="GB">Static</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="calibri.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="calibrib.ttf" Size="44" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="calibri.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
+    <Typography Id="button_lable" Font="calibrib.ttf" Size="16" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default_bold" Font="calibrib.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="number" Font="calibri.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
+    <Typography Id="string" Font="calibri.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="A-Z" />
+    <Typography Id="Text_scroll" Font="calibri.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>
