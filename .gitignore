@@ -6,10 +6,6 @@ backup_*.ioc
 TouchGFX/*_backup.touchgfx
 TouchGFX/build/
 TouchGFX/simulator/
-TouchGFX/target.config
-Middlewares/ST/touchgfx/
-Middlewares/ST/touchgfx_components/
-Middlewares/ST/touchgfx_backup*/
 gcc/components.mk
 
 # IAR
