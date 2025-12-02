@@ -69,26 +69,16 @@ LTDC_HandleTypeDef hltdc;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-// Timer base for 1 ms by timer 6 (default)
-volatile uint32_t ms_counter = 0;
 
 // FPS variables
-volatile uint32_t frame_counter = 0;    // counts VSYNCs
+volatile uint32_t frame_counter = 0;
 
 // Render Time variables
 volatile uint32_t current_ms = 0;
-volatile uint32_t last_vsync_ms = 0;
+volatile uint32_t render_start_ms = 0;
+volatile uint32_t render_end_ms = 0;
 volatile uint32_t render_time = 0;
 
-// Start-up Time variables
-volatile uint32_t boot_start = 0;
-volatile uint32_t boot_stop = 0;
-volatile uint32_t boot_time = 0;
-volatile uint32_t boot_flag = 1;
-
-extern uint32_t idle_cycles;
-uint32_t cpu_load = 0;
-uint32_t transit_ms = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -141,8 +131,6 @@ int main(void)
   SystemPower_Config();
 
   /* Configure the system clock */
-  transit_ms = DWT->CYCCNT;
-  DWT->CYCCNT = 0;
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */

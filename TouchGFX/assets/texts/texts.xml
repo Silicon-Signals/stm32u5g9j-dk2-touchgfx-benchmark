@@ -6,6 +6,69 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_FN08" Alignment="Left" TypographyId="string">
+        <Translation Language="GB">Cluster Test</Translation>
+      </Text>
+      <Text Id="__SingleUse_DN70" Alignment="Center" TypographyId="button_lable">
+        <Translation Language="GB">Cluster</Translation>
+      </Text>
+      <Text Id="__SingleUse_ANTS" Alignment="Left" TypographyId="Text_scroll">
+        <Translation Language="GB">Low Battery !!</Translation>
+      </Text>
+      <Text Id="__SingleUse_8TQ6" Alignment="Left" TypographyId="Text_scroll">
+        <Translation Language="GB">Low fuel&#10;Please refuel</Translation>
+      </Text>
+      <Text Id="__SingleUse_KG29" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_YVW4" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_N6UE" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_QHQX" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;  FPS,</Translation>
+      </Text>
+      <Text Id="__SingleUse_II1D" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_HCH6" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;%CPU</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZZNU" Alignment="Left" TypographyId="cluster_number">
+        <Translation Language="GB">000</Translation>
+      </Text>
+      <Text Id="__SingleUse_FTB6" Alignment="Left" TypographyId="cluster_text">
+        <Translation Language="GB">TOTAL: &lt;value&gt; km</Translation>
+      </Text>
+      <Text Id="__SingleUse_C3KM" Alignment="Left" TypographyId="cluster_number">
+        <Translation Language="GB"> 1 </Translation>
+      </Text>
+      <Text Id="__SingleUse_WBV6" Alignment="Left" TypographyId="cluster_number">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MWE9" Alignment="Left" TypographyId="cluster_text">
+        <Translation Language="GB">Gear</Translation>
+      </Text>
+      <Text Id="__SingleUse_I3GI" Alignment="Left" TypographyId="cluster_text">
+        <Translation Language="GB">% RMP</Translation>
+      </Text>
+      <Text Id="__SingleUse_I1OS" Alignment="Left" TypographyId="cluster_number">
+        <Translation Language="GB">000</Translation>
+      </Text>
+      <Text Id="__SingleUse_B8WG" Alignment="Left" TypographyId="cluster_number">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_EZHL" Alignment="Left" TypographyId="cluster_number">
+        <Translation Language="GB">000</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZRV1" Alignment="Left" TypographyId="cluster_number">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_97NM" Alignment="Left" TypographyId="cluster_text">
+        <Translation Language="GB">KM/H</Translation>
+      </Text>
       <Text Id="__SingleUse_SPC9" Alignment="Left" TypographyId="string">
         <Translation Language="GB">Text Scroll Test</Translation>
       </Text>
@@ -58,7 +121,7 @@
         <Translation Language="GB">00</Translation>
       </Text>
       <Text Id="__SingleUse_DVO8" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">&lt;value&gt;  ms</Translation>
+        <Translation Language="GB">&lt;value&gt;  ms </Translation>
       </Text>
       <Text Id="__SingleUse_OCCW" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">00</Translation>
@@ -162,19 +225,19 @@
       <Text Id="__SingleUse_SVA2" Alignment="Left" TypographyId="string">
         <Translation Language="GB">Video Test</Translation>
       </Text>
-      <Text Id="__SingleUse_TN6S" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_TN6S" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">CPU Load %</Translation>
       </Text>
-      <Text Id="__SingleUse_X1YP" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_X1YP" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">Render TIme (Frame Latency)</Translation>
       </Text>
-      <Text Id="__SingleUse_2G94" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_2G94" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">Heap Usage</Translation>
       </Text>
-      <Text Id="__SingleUse_P0AJ" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_P0AJ" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">Stack Usage</Translation>
       </Text>
-      <Text Id="__SingleUse_EFF4" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_EFF4" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">Frame Rate (FPS)</Translation>
       </Text>
       <Text Id="__SingleUse_5360" Alignment="Left" TypographyId="Default_bold">
@@ -231,7 +294,9 @@
     <Typography Id="button_lable" Font="calibrib.ttf" Size="16" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Default_bold" Font="calibrib.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="number" Font="calibri.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
-    <Typography Id="string" Font="calibri.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="A-Z" />
+    <Typography Id="string" Font="calibrib.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="A-Z" />
     <Typography Id="Text_scroll" Font="calibri.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="cluster_text" Font="digital_7_italic.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
+    <Typography Id="cluster_number" Font="digital_7_italic.ttf" Size="55" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
   </Typographies>
 </TextDatabase>

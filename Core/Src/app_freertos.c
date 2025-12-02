@@ -54,14 +54,9 @@ extern volatile uint32_t frame_counter;
 UBaseType_t StackUsage;
 // Render Time variables
 extern volatile uint32_t current_ms;
-extern volatile uint32_t last_vsync_ms;
 extern volatile uint32_t render_time;
-
-// Start-up Time variables
-extern volatile uint32_t boot_start;
-extern volatile uint32_t boot_stop;
-extern volatile uint32_t boot_time;
-extern volatile uint32_t boot_flag;
+extern uint32_t render_start_ms;
+extern uint32_t render_end_ms;
 
 //Result screen variable
 volatile uint32_t g_fps = 0;
@@ -240,6 +235,10 @@ int GetTaskCPUUsage(osThreadId_t thread_id) {
             for (UBaseType_t i = 0; i < taskCount; i++) {
                 if (pxTaskStatusArray[i].xHandle == (TaskHandle_t)thread_id) {
                     g_cpu_usage = (uint32_t)(((float)pxTaskStatusArray[i].ulRunTimeCounter / (float)totalRunTime) * 100.0f);
+
+                    if(g_cpu_usage < 1) g_cpu_usage = 1;
+                    if(g_cpu_usage > 99) g_cpu_usage =99;
+
                     vPortFree(pxTaskStatusArray);
                     return (int)g_cpu_usage;
                 }
@@ -306,7 +305,7 @@ void metrics_print(void) {
                 g_fps, g_render_time, g_cpu_usage, g_stack_usage, g_heap_usage);
 //        sprintf(buffer, "FPS: %lu, Render Time: %lu ms, CPU: %lu%%, Stack: %lu KB, Heap: %lu KB\r\n",
 //        		avg_fps, avg_render_time, avg_cpu_usage, avg_stack_usage, avg_heap_usage);
-        HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+//        HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
     }
 }
 

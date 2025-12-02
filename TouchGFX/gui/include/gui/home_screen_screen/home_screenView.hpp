@@ -14,6 +14,7 @@ public:
 
     virtual void handleTickEvent();
     void updateruntime_metrics(int fps, int cpu, int renderTime);
+    virtual void runStartButtonAnimation();
 
 protected:
 };

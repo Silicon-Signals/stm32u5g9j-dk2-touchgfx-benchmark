@@ -21,47 +21,12 @@ void Text_Scroll_demoView::setupScreen()
     demo_running = true;
     demo_complete = false;
     sample_count = 0;
-//    tickCounter = 0;
 }
 
 void Text_Scroll_demoView::tearDownScreen()
 {
     Text_Scroll_demoViewBase::tearDownScreen();
 }
-
-/*
-void Text_Scroll_demoView::handleTickEvent()
-{
-    static int32_t scrollPosition = 0; // Current scroll offset (Y)
-    static bool scrollingDown = true; // Direction: true = down, false = up
-    static bool completed = false; // Track if full cycle is done
-    const int32_t CONTENT_HEIGHT = 1548; // Height of textArea1
-    const int32_t VIEWPORT_HEIGHT = 406; // Height of scrollableContainer1
-    const int32_t MAX_SCROLL = CONTENT_HEIGHT - VIEWPORT_HEIGHT; // 1142
-    const int32_t SCROLL_SPEED = 5; // Pixels per tick (~60 pixels/sec at 60 FPS)
-
-    if (completed) {
-        return; // Stop scrolling after one full cycle
-    }
-
-    // Update scroll position and apply delta
-    int32_t scrollDelta = scrollingDown ? -SCROLL_SPEED : SCROLL_SPEED;
-    scrollPosition += scrollingDown ? SCROLL_SPEED : -SCROLL_SPEED;
-
-    // Check boundaries and switch direction
-    if (scrollingDown && scrollPosition >= MAX_SCROLL) {
-        scrollPosition = MAX_SCROLL; // Clamp to max
-        scrollingDown = false; // Switch to scrolling up
-    } else if (!scrollingDown && scrollPosition <= 0) {
-        scrollPosition = 0; // Clamp to min
-        completed = true; // Mark cycle as complete
-    }
-
-    // Apply scroll delta
-    scrollableContainer1.doScroll(0, scrollDelta);
-    scrollableContainer1.invalidate();
-}
-*/
 
 void Text_Scroll_demoView::handleTickEvent()
 {

@@ -21,7 +21,6 @@ void SVG_demoView::setupScreen()
     demo_running = true;
     demo_complete = false;
     sample_count = 0;
-//    tickCounter = 0;
 }
 
 void SVG_demoView::tearDownScreen()

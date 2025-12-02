@@ -153,15 +153,6 @@ bool TouchGFXGeneratedHAL::blockCopy(void* RESTRICT dest, const void* RESTRICT s
 
 extern "C"
 {
-extern volatile uint32_t frame_counter;
-extern volatile uint32_t current_ms;
-extern volatile uint32_t last_vsync_ms;
-extern volatile uint32_t render_time;
-extern volatile uint32_t boot_start;
-extern volatile uint32_t boot_stop;
-extern volatile uint32_t boot_time;
-extern volatile uint32_t boot_flag;
-extern uint32_t transit_ms;
 
     void HAL_LTDC_LineEventCallback(LTDC_HandleTypeDef* hltdc)
     {
@@ -172,12 +163,6 @@ extern uint32_t transit_ms;
 
         if (LTDC->LIPCR == lcd_int_active_line)
         {
-        	frame_counter++;
-			current_ms = HAL_GetTick();
-			if (last_vsync_ms != 0) {
-				render_time = current_ms - last_vsync_ms; // Time between VSyncs
-			}
-			last_vsync_ms = current_ms;
             //entering active area
             HAL_LTDC_ProgramLineEvent(hltdc, lcd_int_porch_line);
             HAL::getInstance()->vSync();
@@ -197,12 +182,6 @@ extern uint32_t transit_ms;
             // Signal to the framework that display update has finished.
             HAL::getInstance()->frontPorchEntered();
             GPIO::clear(GPIO::VSYNC_FREQ);
-
-            if (boot_flag) {
-                       	boot_stop = DWT->CYCCNT;  		//	DWT->CYCCNT;
-                       	boot_time = ((transit_ms *1000)/4000000) + ((boot_stop * 1000) / 160000000);		//(((boot_stop) * 1000) / SystemCoreClock);
-                       	boot_flag = 0;
-                       }
         }
     }
 }

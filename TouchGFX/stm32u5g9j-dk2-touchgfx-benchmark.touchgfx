@@ -127,6 +127,42 @@
           },
           {
             "Type": "FlexButton",
+            "Name": "cluster_demo",
+            "X": 370,
+            "Y": 210,
+            "Width": 60,
+            "Height": 60,
+            "Visible": false,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "X": 1,
+                "Y": 19,
+                "TextId": "__SingleUse_DN70",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "ui_button.png",
+                "ImagePressed": "ui_button.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
             "Name": "SVG_demo",
             "X": 370,
             "Y": 210,
@@ -164,7 +200,7 @@
             "Type": "FlexButton",
             "Name": "static_demo",
             "X": 370,
-            "Y": 208,
+            "Y": 210,
             "Width": 60,
             "Height": 60,
             "Visible": false,
@@ -395,8 +431,8 @@
             },
             "Action": {
               "Type": "ActionMove",
-              "X": 239,
-              "Y": 293,
+              "X": 234,
+              "Y": 313,
               "Easing": "Sine",
               "EasingOption": "In",
               "Duration": 800,
@@ -423,8 +459,8 @@
             },
             "Action": {
               "Type": "ActionMove",
-              "X": 239,
-              "Y": 148,
+              "X": 203,
+              "Y": 191,
               "Easing": "Sine",
               "EasingOption": "In",
               "Duration": 800,
@@ -451,7 +487,7 @@
             },
             "Action": {
               "Type": "ActionMove",
-              "X": 370,
+              "X": 284,
               "Y": 64,
               "Easing": "Sine",
               "EasingOption": "In",
@@ -479,8 +515,8 @@
             },
             "Action": {
               "Type": "ActionMove",
-              "X": 501,
-              "Y": 146,
+              "X": 447,
+              "Y": 64,
               "Easing": "Sine",
               "EasingOption": "In",
               "Duration": 800,
@@ -507,8 +543,8 @@
             },
             "Action": {
               "Type": "ActionMove",
-              "X": 501,
-              "Y": 293,
+              "X": 534,
+              "Y": 191,
               "Easing": "Sine",
               "EasingOption": "In",
               "Duration": 800,
@@ -536,7 +572,7 @@
             "Action": {
               "Type": "ActionMove",
               "X": 370,
-              "Y": 363,
+              "Y": 373,
               "Easing": "Sine",
               "EasingOption": "In",
               "Duration": 800,
@@ -794,6 +830,74 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Result_screen"
             }
+          },
+          {
+            "InteractionName": "display_cluster_demo",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "start_btn"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "cluster_demo"
+            }
+          },
+          {
+            "InteractionName": "move_out_cluster_demo",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "display_cluster_demo"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "X": 495,
+              "Y": 320,
+              "Easing": "Sine",
+              "EasingOption": "In",
+              "Duration": 800,
+              "ActionComponent": "cluster_demo"
+            }
+          },
+          {
+            "InteractionName": "move_in_cluster_demo",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "close_btn"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "X": 370,
+              "Y": 210,
+              "Easing": "Sine",
+              "EasingOption": "In",
+              "Duration": 800,
+              "ActionComponent": "cluster_demo"
+            }
+          },
+          {
+            "InteractionName": "hide_cluster_demo",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "move_in_cluster_demo"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "cluster_demo"
+            }
+          },
+          {
+            "InteractionName": "cluster_demo",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cluster_demo"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Cluster"
+            }
           }
         ]
       },
@@ -988,57 +1092,6 @@
           },
           {
             "Type": "TextureMapper",
-            "Name": "Img_move3",
-            "X": 601,
-            "Y": 280,
-            "Width": 125,
-            "Height": 125,
-            "RenderingAlgorithm": "Nearest-neighbor",
-            "FileNameImage": "Si Logo Light Trans.png",
-            "LockBitmapToCenter": true,
-            "Scale": 1.0,
-            "LockOrigoToCenter": true,
-            "XOrigo": 62.5,
-            "YOrigo": 62.5,
-            "ZOrigo": 1000.0,
-            "CameraDistance": 1000.0
-          },
-          {
-            "Type": "TextureMapper",
-            "Name": "Img_move2",
-            "X": 338,
-            "Y": 280,
-            "Width": 125,
-            "Height": 125,
-            "RenderingAlgorithm": "Nearest-neighbor",
-            "FileNameImage": "Si Logo Light Trans.png",
-            "LockBitmapToCenter": true,
-            "Scale": 1.0,
-            "LockOrigoToCenter": true,
-            "XOrigo": 62.5,
-            "YOrigo": 62.5,
-            "ZOrigo": 1000.0,
-            "CameraDistance": 1000.0
-          },
-          {
-            "Type": "TextureMapper",
-            "Name": "Img_move1",
-            "X": 65,
-            "Y": 280,
-            "Width": 125,
-            "Height": 125,
-            "RenderingAlgorithm": "Nearest-neighbor",
-            "FileNameImage": "Si Logo Light Trans.png",
-            "LockBitmapToCenter": true,
-            "Scale": 1.0,
-            "LockOrigoToCenter": true,
-            "XOrigo": 62.5,
-            "YOrigo": 62.5,
-            "ZOrigo": 1000.0,
-            "CameraDistance": 1000.0
-          },
-          {
-            "Type": "TextureMapper",
             "Name": "Img_rotate3",
             "X": 601,
             "Y": 57,
@@ -1087,32 +1140,33 @@
             "YOrigo": 62.5,
             "ZOrigo": 300.0,
             "CameraDistance": 300.0
-          }
-        ],
-        "Interactions": []
-      },
-      {
-        "Name": "image_demo_old",
-        "Components": [
-          {
-            "Type": "Box",
-            "Name": "background",
-            "Width": 800,
-            "Height": 480,
-            "Color": {
-              "Red": 18,
-              "Green": 41,
-              "Blue": 75
-            }
           },
           {
             "Type": "Image",
-            "Name": "si_logo",
-            "X": 635,
-            "Y": 20,
-            "Width": 151,
-            "Height": 49,
-            "RelativeFilename": "Si Logo Light.png"
+            "Name": "Img_move1",
+            "X": 65,
+            "Y": 280,
+            "Width": 125,
+            "Height": 125,
+            "RelativeFilename": "Si Logo Light Trans.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Img_move2",
+            "X": 338,
+            "Y": 280,
+            "Width": 125,
+            "Height": 125,
+            "RelativeFilename": "Si Logo Light Trans.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Img_move3",
+            "X": 601,
+            "Y": 280,
+            "Width": 125,
+            "Height": 125,
+            "RelativeFilename": "Si Logo Light Trans.png"
           }
         ],
         "Interactions": []
@@ -1348,7 +1402,7 @@
                 "Name": "Render_time",
                 "X": 4,
                 "Y": 10,
-                "Width": 40,
+                "Width": 43,
                 "Height": 17,
                 "TextId": "__SingleUse_DVO8",
                 "TextRotation": "0",
@@ -1654,14 +1708,14 @@
           {
             "Type": "Image",
             "Name": "background",
-            "Width": 798,
+            "Width": 800,
             "Height": 480,
             "RelativeFilename": "Object Result.png"
           },
           {
             "Type": "Container",
             "Name": "metrics_container",
-            "X": 688,
+            "X": 690,
             "Y": 450,
             "Width": 110,
             "Height": 30,
@@ -1744,7 +1798,7 @@
             "X": 428,
             "Y": 329,
             "Width": 35,
-            "Height": 21,
+            "Height": 18,
             "TextId": "__SingleUse_O6I8",
             "TextRotation": "0",
             "Color": {
@@ -1765,7 +1819,7 @@
             "X": 428,
             "Y": 296,
             "Width": 43,
-            "Height": 21,
+            "Height": 18,
             "TextId": "__SingleUse_VEM3",
             "TextRotation": "0",
             "Color": {
@@ -1786,7 +1840,7 @@
             "X": 428,
             "Y": 260,
             "Width": 41,
-            "Height": 21,
+            "Height": 18,
             "TextId": "__SingleUse_NT68",
             "TextRotation": "0",
             "Color": {
@@ -1807,7 +1861,7 @@
             "X": 428,
             "Y": 222,
             "Width": 41,
-            "Height": 21,
+            "Height": 18,
             "TextId": "__SingleUse_Q895",
             "TextRotation": "0",
             "Color": {
@@ -1828,7 +1882,7 @@
             "X": 428,
             "Y": 187,
             "Width": 18,
-            "Height": 21,
+            "Height": 18,
             "TextId": "__SingleUse_U2PI",
             "TextRotation": "0",
             "Color": {
@@ -1848,7 +1902,7 @@
             "Name": "Video_test_name",
             "X": 428,
             "Y": 152,
-            "Width": 77,
+            "Width": 79,
             "Height": 21,
             "Visible": false,
             "TextId": "__SingleUse_SVA2",
@@ -1882,7 +1936,7 @@
             "Name": "Static_test_name",
             "X": 428,
             "Y": 150,
-            "Width": 76,
+            "Width": 77,
             "Height": 21,
             "Visible": false,
             "TextId": "__SingleUse_EHCD",
@@ -1899,7 +1953,7 @@
             "Name": "SVG_test_name",
             "X": 425,
             "Y": 152,
-            "Width": 64,
+            "Width": 66,
             "Height": 21,
             "Visible": false,
             "TextId": "__SingleUse_LQ03",
@@ -1916,10 +1970,27 @@
             "Name": "Text_scroll_test_name",
             "X": 428,
             "Y": 150,
-            "Width": 111,
+            "Width": 112,
             "Height": 21,
             "Visible": false,
             "TextId": "__SingleUse_SPC9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Cluster_test_name",
+            "X": 428,
+            "Y": 150,
+            "Width": 87,
+            "Height": 21,
+            "Visible": false,
+            "TextId": "__SingleUse_FN08",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1952,7 +2023,7 @@
             "X": 165,
             "Y": 153,
             "Width": 31,
-            "Height": 18,
+            "Height": 21,
             "TextId": "__SingleUse_5360",
             "TextRotation": "0",
             "Color": {
@@ -1966,8 +2037,8 @@
             "Type": "TextArea",
             "Name": "FPS_text",
             "X": 165,
-            "Y": 191,
-            "Width": 123,
+            "Y": 186,
+            "Width": 128,
             "Height": 21,
             "TextId": "__SingleUse_EFF4",
             "TextRotation": "0",
@@ -1983,7 +2054,7 @@
             "Name": "Stack_text",
             "X": 165,
             "Y": 222,
-            "Width": 88,
+            "Width": 91,
             "Height": 21,
             "TextId": "__SingleUse_P0AJ",
             "TextRotation": "0",
@@ -1999,7 +2070,7 @@
             "Name": "Heap_text",
             "X": 165,
             "Y": 260,
-            "Width": 87,
+            "Width": 89,
             "Height": 21,
             "TextId": "__SingleUse_2G94",
             "TextRotation": "0",
@@ -2015,7 +2086,7 @@
             "Name": "Render_time_text",
             "X": 165,
             "Y": 296,
-            "Width": 214,
+            "Width": 222,
             "Height": 21,
             "TextId": "__SingleUse_X1YP",
             "TextRotation": "0",
@@ -2031,7 +2102,7 @@
             "Name": "CPU_text",
             "X": 165,
             "Y": 329,
-            "Width": 88,
+            "Width": 90,
             "Height": 21,
             "TextId": "__SingleUse_TN6S",
             "TextRotation": "0",
@@ -2057,6 +2128,564 @@
             }
           }
         ]
+      },
+      {
+        "Name": "Cluster",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Background",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "BG auto cluster.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Left_c_cluster",
+            "X": -10,
+            "Y": 98,
+            "Width": 300,
+            "Height": 300,
+            "RelativeFilename": "left_frame_000.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Right_c_cluster",
+            "X": 511,
+            "Y": 98,
+            "Width": 300,
+            "Height": 300,
+            "RelativeFilename": "right_frame_000.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "white_left_indicator",
+            "X": 181,
+            "Y": 30,
+            "Width": 51,
+            "Height": 41,
+            "RelativeFilename": "left_indicator.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "left_indicator",
+            "X": 181,
+            "Y": 30,
+            "Width": 51,
+            "Height": 41,
+            "Visible": false,
+            "RelativeFilename": "left_indicator_colored.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "white_dipper",
+            "X": 273,
+            "Y": 30,
+            "Width": 58,
+            "Height": 41,
+            "RelativeFilename": "dipper.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "dipper",
+            "X": 273,
+            "Y": 30,
+            "Width": 58,
+            "Height": 41,
+            "Visible": false,
+            "RelativeFilename": "dipper_colored.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "white_engine",
+            "X": 371,
+            "Y": 30,
+            "Width": 63,
+            "Height": 42,
+            "RelativeFilename": "engine.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "engine",
+            "X": 371,
+            "Y": 30,
+            "Width": 63,
+            "Height": 42,
+            "Visible": false,
+            "RelativeFilename": "engine_colored.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "white_service",
+            "X": 478,
+            "Y": 30,
+            "Width": 54,
+            "Height": 47,
+            "RelativeFilename": "service.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "service",
+            "X": 478,
+            "Y": 30,
+            "Width": 54,
+            "Height": 47,
+            "Visible": false,
+            "RelativeFilename": "service_colored.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "white_right_indicator",
+            "X": 569,
+            "Y": 30,
+            "Width": 51,
+            "Height": 41,
+            "RelativeFilename": "right_indicator.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "right_indicator",
+            "X": 569,
+            "Y": 30,
+            "Width": 51,
+            "Height": 41,
+            "Visible": false,
+            "RelativeFilename": "right_indicator_colored.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "km_text",
+            "X": 181,
+            "Y": 248,
+            "Width": 56,
+            "Height": 31,
+            "TextId": "__SingleUse_97NM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "total_km",
+            "X": 322,
+            "Y": 426,
+            "Width": 161,
+            "Height": 31,
+            "TextId": "__SingleUse_FTB6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZZNU",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gear_text",
+            "X": 375,
+            "Y": 165,
+            "Width": 55,
+            "Height": 31,
+            "TextId": "__SingleUse_MWE9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM_text",
+            "X": 564,
+            "Y": 248,
+            "Width": 66,
+            "Height": 31,
+            "TextId": "__SingleUse_I3GI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "km_per_hour",
+            "X": 184,
+            "Y": 189,
+            "Width": 78,
+            "Height": 55,
+            "TextId": "__SingleUse_ZRV1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_EZHL",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gear",
+            "X": 390,
+            "Y": 110,
+            "Width": 39,
+            "Height": 55,
+            "TextId": "__SingleUse_WBV6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_C3KM",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM",
+            "X": 571,
+            "Y": 189,
+            "Width": 78,
+            "Height": 55,
+            "TextId": "__SingleUse_B8WG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_I1OS",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "low_fuel",
+            "X": 30,
+            "Y": 430,
+            "Width": 130,
+            "Height": 14,
+            "Visible": false,
+            "RelativeFilename": "Low_fuel.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "fuel_50",
+            "X": 30,
+            "Y": 430,
+            "Width": 130,
+            "Height": 14,
+            "Visible": false,
+            "RelativeFilename": "Fuel_50.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "fuel_80",
+            "X": 30,
+            "Y": 430,
+            "Width": 130,
+            "Height": 14,
+            "Visible": false,
+            "RelativeFilename": "Fuel_80.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "full_fuel",
+            "X": 30,
+            "Y": 430,
+            "Width": 130,
+            "Height": 14,
+            "RelativeFilename": "Full_fuel.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "fuel_icon",
+            "X": 184,
+            "Y": 422,
+            "Width": 30,
+            "Height": 30,
+            "RelativeFilename": "Fuel_icon.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "white_fuel_icon",
+            "X": 184,
+            "Y": 422,
+            "Width": 30,
+            "Height": 30,
+            "RelativeFilename": "fuel.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Battery_low",
+            "X": 614,
+            "Y": 272,
+            "Width": 170,
+            "Height": 150,
+            "Visible": false,
+            "RelativeFilename": "Battery_low.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Battery_50",
+            "X": 614,
+            "Y": 272,
+            "Width": 170,
+            "Height": 150,
+            "Visible": false,
+            "RelativeFilename": "Battey_50.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Battery_full",
+            "X": 614,
+            "Y": 272,
+            "Width": 170,
+            "Height": 150,
+            "RelativeFilename": "Battery_full.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "white_battery_icon",
+            "X": 740,
+            "Y": 349,
+            "Width": 40,
+            "Height": 40,
+            "RelativeFilename": "white_Battery_icon.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "battery_icon",
+            "X": 740,
+            "Y": 349,
+            "Width": 40,
+            "Height": 40,
+            "RelativeFilename": "Battery_icon.png"
+          },
+          {
+            "Type": "Container",
+            "Name": "metrics_container",
+            "X": 690,
+            "Y": 450,
+            "Width": 110,
+            "Height": 30,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box1",
+                "Width": 110,
+                "Height": 30,
+                "Alpha": 126
+              },
+              {
+                "Type": "TextArea",
+                "Name": "CPU_usage",
+                "X": 55,
+                "Y": -2,
+                "Width": 53,
+                "Height": 17,
+                "TextId": "__SingleUse_HCH6",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_II1D",
+                  "UseBuffer": true,
+                  "BufferSize": 5
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "FPS",
+                "X": 4,
+                "Y": -2,
+                "Width": 48,
+                "Height": 17,
+                "TextId": "__SingleUse_QHQX",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_N6UE",
+                  "UseBuffer": true,
+                  "BufferSize": 5
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Render_time",
+                "X": 4,
+                "Y": 10,
+                "Width": 40,
+                "Height": 17,
+                "TextId": "__SingleUse_YVW4",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_KG29",
+                  "UseBuffer": true,
+                  "BufferSize": 5
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "low_fuel_container",
+            "X": 300,
+            "Y": 8,
+            "Width": 200,
+            "Height": 70,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "white_box",
+                "Width": 200,
+                "Height": 70,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "white_box_1",
+                "X": 5,
+                "Y": 5,
+                "Width": 190,
+                "Height": 60,
+                "Color": {
+                  "Red": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 57,
+                "Y": 4,
+                "Width": 131,
+                "Height": 60,
+                "TextId": "__SingleUse_8TQ6",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "Image",
+                "Name": "fuel_img",
+                "X": 16,
+                "Y": 22,
+                "Width": 30,
+                "Height": 30,
+                "RelativeFilename": "fuel.png"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "low_battery_container",
+            "X": 300,
+            "Y": 8,
+            "Width": 200,
+            "Height": 50,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "white_box_2",
+                "Width": 200,
+                "Height": 50,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "white_box_1_1",
+                "X": 5,
+                "Y": 5,
+                "Width": 190,
+                "Height": 40,
+                "Color": {
+                  "Red": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1_1",
+                "X": 48,
+                "Y": 9,
+                "Width": 144,
+                "Height": 30,
+                "TextId": "__SingleUse_ANTS",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "Image",
+                "Name": "battery_img",
+                "X": 10,
+                "Y": 10,
+                "Width": 30,
+                "Height": 30,
+                "RelativeFilename": "batterry.png"
+              }
+            ]
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],

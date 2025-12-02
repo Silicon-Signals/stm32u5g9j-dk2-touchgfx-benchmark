@@ -18,6 +18,9 @@ public:
         model.tick();
         FrontendApplicationBase::handleTickEvent();
     }
+
+    bool autoStartDemo = false;
+    
 private:
 };
 

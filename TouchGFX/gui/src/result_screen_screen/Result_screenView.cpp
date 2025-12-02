@@ -3,16 +3,17 @@
 
 Result_screenView::Result_screenView()
 {
-
+    
 }
 
 void Result_screenView::setupScreen()
 {
     Result_screenViewBase::setupScreen();
 
-//    updateTextAreas(10, 10, 10, 10, 10);
     updateTextAreas(avg_fps, avg_stack_usage, avg_cpu_usage, avg_render_time, avg_heap_usage);
     updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
+
+    application().autoStartDemo = true;
 }
 
 void Result_screenView::tearDownScreen()
@@ -28,6 +29,8 @@ void Result_screenView::handleTickEvent()
 void Result_screenView::updateTextAreas(int fps, int stack, int cpu, int renderTime, int heap)
 {
     // Hide all Test name by default
+    Video_test_name.setVisible(false);
+    Video_test_name.invalidate();
     Image_test_name.setVisible(false);
     Image_test_name.invalidate();
     Static_test_name.setVisible(false);
@@ -36,8 +39,9 @@ void Result_screenView::updateTextAreas(int fps, int stack, int cpu, int renderT
     SVG_test_name.invalidate();
     Text_scroll_test_name.setVisible(false);
     Text_scroll_test_name.invalidate();
-    Video_test_name.setVisible(false);
-    Video_test_name.invalidate();
+    Cluster_test_name.setVisible(false);
+    Cluster_test_name.invalidate();
+    
 
     // Show the selected Test based on test_name
     if (test_name == 1) {
@@ -55,6 +59,9 @@ void Result_screenView::updateTextAreas(int fps, int stack, int cpu, int renderT
     } else if (test_name == 5) {
         Text_scroll_test_name.setVisible(true);
         Text_scroll_test_name.invalidate();
+    } else if (test_name == 6) {
+        Cluster_test_name.setVisible(true);
+        Cluster_test_name.invalidate();
     }
 
     Unicode::snprintf(FPSBuffer, 10, "%d", fps);
