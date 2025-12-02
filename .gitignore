@@ -5,8 +5,6 @@ backup_*.ioc
 # TouchGFX
 TouchGFX/*_backup.touchgfx
 TouchGFX/build/
-TouchGFX/config/
-TouchGFX/generated/
 TouchGFX/simulator/
 TouchGFX/target.config
 Middlewares/ST/touchgfx/
