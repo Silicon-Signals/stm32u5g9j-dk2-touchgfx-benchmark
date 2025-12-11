@@ -42,43 +42,43 @@ void static_demoView::handleTickEvent()
         // Change colors every ~200ms (12 ticks at 60 FPS)
         if (tickCounter % TICKS_PER_COLOR_CHANGE == 0)
         {
-            int patternIndex = (tickCounter / TICKS_PER_COLOR_CHANGE) % 3;  // Cycle 0,1,2
+            int patternIndex = (tickCounter / TICKS_PER_COLOR_CHANGE) % 3;
 
-            touchgfx::colortype squareColor, circleColor, rectColor;
+            touchgfx::colortype square_color, circle_color, rectangle_color;
 
             switch (patternIndex)
             {
             case 0:  // Red square, Green circle, Blue triangle
-                squareColor = touchgfx::Color::getColorFromRGB(255, 0, 0);
-                circleColor = touchgfx::Color::getColorFromRGB(0, 255, 0);
-                rectColor = touchgfx::Color::getColorFromRGB(0, 0, 255);
+                square_color = touchgfx::Color::getColorFromRGB(255, 0, 0);
+                circle_color = touchgfx::Color::getColorFromRGB(0, 255, 0);
+                rectangle_color = touchgfx::Color::getColorFromRGB(0, 0, 255);
                 break;
             case 1:  // Blue square, Red circle, Green triangle
-                squareColor = touchgfx::Color::getColorFromRGB(0, 0, 255);
-                circleColor = touchgfx::Color::getColorFromRGB(255, 0, 0);
-                rectColor = touchgfx::Color::getColorFromRGB(0, 255, 0);
+                square_color = touchgfx::Color::getColorFromRGB(0, 0, 255);
+                circle_color = touchgfx::Color::getColorFromRGB(255, 0, 0);
+                rectangle_color = touchgfx::Color::getColorFromRGB(0, 255, 0);
                 break;
             case 2:  // Green square, Blue circle, Red triangle
-                squareColor = touchgfx::Color::getColorFromRGB(0, 255, 0);
-                circleColor = touchgfx::Color::getColorFromRGB(0, 0, 255);
-                rectColor = touchgfx::Color::getColorFromRGB(255, 0, 0);
+                square_color = touchgfx::Color::getColorFromRGB(0, 255, 0);
+                circle_color = touchgfx::Color::getColorFromRGB(0, 0, 255);
+                rectangle_color = touchgfx::Color::getColorFromRGB(255, 0, 0);
                 break;
             }
 
             // Update square
-            square.setColor(squareColor);
+            square.setColor(square_color);
             square.invalidate();
-            alpha_square.setColor(squareColor);
+            alpha_square.setColor(square_color);
             alpha_square.invalidate();
 
             // Update rectangle
-            rectangle.setColor(rectColor);
+            rectangle.setColor(rectangle_color);
             rectangle.invalidate();
 
             // Update circle
-            circlePainter.setColor(circleColor);
+            circlePainter.setColor(circle_color);
             circle.invalidate();
-            alpha_circlePainter.setColor(circleColor);
+            alpha_circlePainter.setColor(circle_color);
             alpha_circle.invalidate();
         }
 

@@ -47,7 +47,7 @@ void SVG_demoView::handleTickEvent()
     };
 
     // Array of tire objects for easier iteration
-    static touchgfx::Drawable* tires[5] = {&Tire1, &Tire2, &Tire3, &Tire4, &Tire5};
+    static touchgfx::Drawable* tires[5] = {&tire1, &tire2, &tire3, &tire4, &tire5};
     static int16_t lastX[5] = {367, 543, 659, 80, 188};
     static int16_t lastY[5] = {165, 127, 16, 16, 127};
 
@@ -60,7 +60,6 @@ void SVG_demoView::handleTickEvent()
         for (int i = 0; i < 5; i++) {
             lastX[i] = tires[i]->getX();
             lastY[i] = tires[i]->getY();
-        //    tirePairs[i]->setVisible(false); // Ensure all tire_pairs start invisible
         }
     }
 

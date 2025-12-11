@@ -710,11 +710,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Full_fuel.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_Group_141.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Group_141.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_Home_button.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Home_button.cpp</locationURI>

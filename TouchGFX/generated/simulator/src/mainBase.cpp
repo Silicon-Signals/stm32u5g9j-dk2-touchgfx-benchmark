@@ -46,8 +46,10 @@ void setupVideoDecoder(touchgfx::HAL& hal)
 void setupVideo(const char* videoFileName, const uint8_t** videoBuffer, uint32_t videoLength)
 {
     FILE *file = 0;
-    fopen_s(&file, videoFileName, "rb");
-    assert(file && "Unable to setupVideo.");
+    if (!fopen_s(&file, videoFileName, "rb"))
+    {
+        assert(file && "Unable to setupVideo.");
+    }
     *videoBuffer = (uint8_t*) malloc(videoLength + 1);
     fread(const_cast<uint8_t*>(*videoBuffer), 1, videoLength, file);
     fclose(file);

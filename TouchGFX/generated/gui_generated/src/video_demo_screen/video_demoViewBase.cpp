@@ -12,11 +12,11 @@ video_demoViewBase::video_demoViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    Big_bug_bu.setPosition(0, 0, 800, 480);
-    Big_bug_bu.setVideoData(video_Big_Buck_Bunny_mjpeg_bin_start, video_Big_Buck_Bunny_mjpeg_bin_length);
-    Big_bug_bu.setRepeat(true);
-    Big_bug_bu.play();
-    add(Big_bug_bu);
+    Big_bug_bunny.setPosition(0, 0, 800, 480);
+    Big_bug_bunny.setVideoData(video_Big_Buck_Bunny_mjpeg_bin_start, video_Big_Buck_Bunny_mjpeg_bin_length);
+    Big_bug_bunny.setRepeat(true);
+    Big_bug_bunny.play();
+    add(Big_bug_bunny);
 
     metrics_container.setPosition(690, 450, 110, 30);
     box1.setPosition(0, 0, 110, 30);

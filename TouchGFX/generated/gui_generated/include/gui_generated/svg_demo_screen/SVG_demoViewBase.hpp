@@ -41,11 +41,11 @@ protected:
     touchgfx::SVGImage tire_pair_4;
     touchgfx::SVGImage tire_pair_5;
     touchgfx::SVGImage svgImage;
-    touchgfx::SVGImage Tire1;
-    touchgfx::SVGImage Tire5;
-    touchgfx::SVGImage Tire4;
-    touchgfx::SVGImage Tire2;
-    touchgfx::SVGImage Tire3;
+    touchgfx::SVGImage tire1;
+    touchgfx::SVGImage tire5;
+    touchgfx::SVGImage tire4;
+    touchgfx::SVGImage tire2;
+    touchgfx::SVGImage tire3;
 
     /*
      * Wildcard Buffers

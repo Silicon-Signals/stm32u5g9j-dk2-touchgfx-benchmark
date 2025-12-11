@@ -106,7 +106,7 @@ SVG_demoViewBase::SVG_demoViewBase()
     tire_pair_5.setRotation(0.0f);
     add(tire_pair_5);
 
-    svgImage.setSVG(SVG_ELLIPSE_18_ID);
+    svgImage.setSVG(SVG_ELLIPSE_ID);
     svgImage.setPosition(87, -38, 629, 241);
     svgImage.setScale(1.04f, 1.22f);
     svgImage.setImagePosition(0, 0);
@@ -114,45 +114,45 @@ SVG_demoViewBase::SVG_demoViewBase()
     svgImage.setRotation(0.0f);
     add(svgImage);
 
-    Tire1.setSVG(SVG_TIRE1_ID);
-    Tire1.setPosition(367, 165, 65, 65);
-    Tire1.setScale(1.16f, 1.16f);
-    Tire1.setImagePosition(0, 0);
-    Tire1.setRotationCenter(0, 0);
-    Tire1.setRotation(0.0f);
-    add(Tire1);
+    tire1.setSVG(SVG_TIRE1_ID);
+    tire1.setPosition(367, 165, 65, 65);
+    tire1.setScale(1.16f, 1.16f);
+    tire1.setImagePosition(0, 0);
+    tire1.setRotationCenter(0, 0);
+    tire1.setRotation(0.0f);
+    add(tire1);
 
-    Tire5.setSVG(SVG_TIRE5_ID);
-    Tire5.setPosition(188, 127, 65, 65);
-    Tire5.setScale(1.23f, 1.23f);
-    Tire5.setImagePosition(0, 0);
-    Tire5.setRotationCenter(0, 0);
-    Tire5.setRotation(0.0f);
-    add(Tire5);
+    tire5.setSVG(SVG_TIRE5_ID);
+    tire5.setPosition(188, 127, 65, 65);
+    tire5.setScale(1.23f, 1.23f);
+    tire5.setImagePosition(0, 0);
+    tire5.setRotationCenter(0, 0);
+    tire5.setRotation(0.0f);
+    add(tire5);
 
-    Tire4.setSVG(SVG_TIRE4_ID);
-    Tire4.setPosition(80, 16, 65, 65);
-    Tire4.setScale(1.2f, 1.23f);
-    Tire4.setImagePosition(0, 0);
-    Tire4.setRotationCenter(0, 0);
-    Tire4.setRotation(0.0f);
-    add(Tire4);
+    tire4.setSVG(SVG_TIRE4_ID);
+    tire4.setPosition(80, 16, 65, 65);
+    tire4.setScale(1.2f, 1.23f);
+    tire4.setImagePosition(0, 0);
+    tire4.setRotationCenter(0, 0);
+    tire4.setRotation(0.0f);
+    add(tire4);
 
-    Tire2.setSVG(SVG_TIRE2_ID);
-    Tire2.setPosition(543, 127, 65, 65);
-    Tire2.setScale(1.23f, 1.23f);
-    Tire2.setImagePosition(0, 0);
-    Tire2.setRotationCenter(0, 0);
-    Tire2.setRotation(0.0f);
-    add(Tire2);
+    tire2.setSVG(SVG_TIRE2_ID);
+    tire2.setPosition(543, 127, 65, 65);
+    tire2.setScale(1.23f, 1.23f);
+    tire2.setImagePosition(0, 0);
+    tire2.setRotationCenter(0, 0);
+    tire2.setRotation(0.0f);
+    add(tire2);
 
-    Tire3.setSVG(SVG_TIRE3_ID);
-    Tire3.setPosition(659, 16, 65, 65);
-    Tire3.setScale(1.25f, 1.25f);
-    Tire3.setImagePosition(0, 0);
-    Tire3.setRotationCenter(0, 0);
-    Tire3.setRotation(0.0f);
-    add(Tire3);
+    tire3.setSVG(SVG_TIRE3_ID);
+    tire3.setPosition(659, 16, 65, 65);
+    tire3.setScale(1.25f, 1.25f);
+    tire3.setImagePosition(0, 0);
+    tire3.setRotationCenter(0, 0);
+    tire3.setRotation(0.0f);
+    add(tire3);
 }
 
 SVG_demoViewBase::~SVG_demoViewBase()

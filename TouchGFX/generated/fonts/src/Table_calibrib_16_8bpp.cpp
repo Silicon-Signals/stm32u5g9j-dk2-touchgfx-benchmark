@@ -197,6 +197,6 @@ touchgfx::GeneratedFont& getFont_calibrib_16_8bpp();
 
 touchgfx::GeneratedFont& getFont_calibrib_16_8bpp()
 {
-    static touchgfx::GeneratedFont calibrib_16_8bpp(glyphs_calibrib_16_8bpp, 20, 16, 16, 0, 0, 8, 0, 0, 1, unicodes_calibrib_16_8bpp, kerning_calibrib_16_8bpp, 63, 0, 0, &calibrib_contextualFormsTable);
+    static touchgfx::GeneratedFont calibrib_16_8bpp(glyphs_calibrib_16_8bpp, 20, 16, 16, 0, 0, 8, 1, 0, 1, unicodes_calibrib_16_8bpp, kerning_calibrib_16_8bpp, 63, 0, 0, &calibrib_contextualFormsTable);
     return calibrib_16_8bpp;
 }

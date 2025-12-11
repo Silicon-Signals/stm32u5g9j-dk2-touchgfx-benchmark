@@ -28,7 +28,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::VideoWidget Big_bug_bu;
+    touchgfx::VideoWidget Big_bug_bunny;
     touchgfx::Container metrics_container;
     touchgfx::Box box1;
     touchgfx::TextAreaWithOneWildcard CPU_usage;

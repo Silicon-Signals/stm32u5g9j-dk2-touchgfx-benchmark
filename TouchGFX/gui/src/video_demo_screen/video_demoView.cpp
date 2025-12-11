@@ -19,8 +19,6 @@ void video_demoView::setupScreen()
     demo_complete = false;
     sample_count = 0;
     tickCounter = 0;
-
-//    updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
 }
 
 void video_demoView::tearDownScreen()

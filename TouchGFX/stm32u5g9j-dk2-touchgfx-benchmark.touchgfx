@@ -906,7 +906,7 @@
         "Components": [
           {
             "Type": "Video",
-            "Name": "Big_bug_bu",
+            "Name": "Big_bug_bunny",
             "Width": 800,
             "Height": 480,
             "VideoFileName": "Big_Buck_Bunny_mjpeg.avi",
@@ -1427,7 +1427,7 @@
             "Y": 271,
             "Width": 433,
             "Height": 115,
-            "Image": "Car Body.svg",
+            "Image": "car_body.svg",
             "FitImageToSize": true,
             "ImageHorizontalScale": 1.0,
             "ImageVerticalScale": 0.98
@@ -1503,14 +1503,14 @@
             "Y": -38,
             "Width": 629,
             "Height": 241,
-            "Image": "Ellipse 18.svg",
+            "Image": "ellipse.svg",
             "FitImageToSize": true,
             "ImageHorizontalScale": 1.04,
             "ImageVerticalScale": 1.22
           },
           {
             "Type": "SvgImage",
-            "Name": "Tire1",
+            "Name": "tire1",
             "X": 367,
             "Y": 165,
             "Width": 65,
@@ -1522,7 +1522,7 @@
           },
           {
             "Type": "SvgImage",
-            "Name": "Tire5",
+            "Name": "tire5",
             "X": 188,
             "Y": 127,
             "Width": 65,
@@ -1534,7 +1534,7 @@
           },
           {
             "Type": "SvgImage",
-            "Name": "Tire4",
+            "Name": "tire4",
             "X": 80,
             "Y": 16,
             "Width": 65,
@@ -1546,7 +1546,7 @@
           },
           {
             "Type": "SvgImage",
-            "Name": "Tire2",
+            "Name": "tire2",
             "X": 543,
             "Y": 127,
             "Width": 65,
@@ -1558,7 +1558,7 @@
           },
           {
             "Type": "SvgImage",
-            "Name": "Tire3",
+            "Name": "tire3",
             "X": 659,
             "Y": 16,
             "Width": 65,
@@ -2749,6 +2749,6 @@
       "Video"
     ]
   },
-  "Version": "4.25.0",
+  "Version": "4.26.0",
   "CreatedBy": "4.25.0"
 }

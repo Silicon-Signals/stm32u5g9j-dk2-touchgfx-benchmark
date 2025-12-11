@@ -32,16 +32,11 @@ void ClusterView::setupScreen()
     engine.invalidate();
 
     // Reset timers
-    totalTimer = 0;
-    indicatorTimer = 0;
+    tickCounter = 0;
     indicatorState = IndicatorState::LeftOnly;
 
-    dipperOn = false;
-    dipperFlashTimer = 0;
-    dipperFlashCount = 0;
-
-    fuelState = FuelState::Full;
-    fuelTimer = 0;
+    dipper_flashtimer = 0;
+    dipper_flashcount = 0;
 
     // Start demo sampling
     demo_running = true;
@@ -58,13 +53,10 @@ void ClusterView::tearDownScreen()
 
 void ClusterView::startBothAnimations()
 {
-    leftAnimFrame = 0;
-    rightAnimFrame = 0;
-    leftAnimTickCounter = 0;
-    rightAnimTickCounter = 0;
-    leftAnimationRunning = true;
-    rightAnimationRunning = true;
-    animationActive = true;
+	animation_frame = 0;
+	animation_tickcounter = 0;
+	left_animation_running = true;
+	right_animation_running = true;
     phase = Phase::Forward1;
 
     Left_c_cluster.setBitmap(Bitmap(BITMAP_LEFT_FRAME_000_ID));
@@ -75,17 +67,15 @@ void ClusterView::startBothAnimations()
 
 void ClusterView::handleTickEvent()
 {
-    if (!leftAnimationRunning || !rightAnimationRunning)
+    if (!left_animation_running || !right_animation_running)
         return;
 
-    leftAnimTickCounter++;
-    rightAnimTickCounter++;
+    tickCounter++;
 
-    // === 20-SECOND TOTAL TIMER ===
-    if (indicatorTimer >= INDICATOR_TOTAL_TICKS)
+    // END OF 20-SECOND DEMO
+    if (tickCounter >= TOTAL_TICKS)
     {
-        leftAnimationRunning = false;
-        rightAnimationRunning = false;
+    	left_animation_running = right_animation_running = false;
 
         left_indicator.setVisible(false);
         right_indicator.setVisible(false);
@@ -95,274 +85,183 @@ void ClusterView::handleTickEvent()
         demo_complete = false;
         test_name = 6;
         application().gotoResult_screenScreenNoTransition();
-
         return;
     }
 
-    // === INDICATOR CYCLE LOGIC (every 6 seconds) ===
-    uint16_t cycleTime = indicatorTimer % INDICATOR_CYCLE_TICKS;
+    const uint16_t seconds = tickCounter / 60;
+    const uint16_t cyclePhase = (tickCounter % INDICATOR_CYCLE_TICKS) / TICKS_PER_PHASE;
 
-    if (cycleTime < TICKS_PER_PHASE) // 0–2 sec
+    // TURN INDICATORS (6-second cycle)
+    switch (cyclePhase)
     {
-        indicatorState = IndicatorState::LeftOnly;
+    case 0:
         left_indicator.setVisible(true);
         right_indicator.setVisible(false);
-    }
-    else if (cycleTime < TICKS_PER_PHASE * 2) // 2–4 sec
-    {
-        indicatorState = IndicatorState::RightOnly;
+        break;
+    case 1:
         left_indicator.setVisible(false);
         right_indicator.setVisible(true);
-    }
-    else // 4–6 sec
-    {
-        indicatorState = IndicatorState::BothOn;
+        break;
+    default:
         left_indicator.setVisible(true);
         right_indicator.setVisible(true);
+        break;
     }
-
     left_indicator.invalidate();
     right_indicator.invalidate();
 
-    // === WARNING LIGHTS LOGIC (Dipper, Service, Engine) ===
-    uint16_t seconds = indicatorTimer / 60; // convert ticks to seconds
-
-    // --- Dipper: Flash at 8s and 15s (500ms ON) ---
-    // Start flash sequence at 8s or 15s
-    if ((seconds == 8 || seconds == 15) && !dipperOn && dipperFlashTimer == 0)
+    // DIPPER FLASH at 8s and 15s
+    if ((seconds == 8 || seconds == 15) && dipper_flashcount == 0)
     {
+    	dipper_flashtimer = 1;
+    	dipper_flashcount = 1;
         dipper.setVisible(true);
         dipper.invalidate();
-        dipperOn = true;
-        dipperFlashTimer = 1;
-        dipperFlashCount = 1;
     }
 
-    // Control 500ms flash duration
-    if (dipperOn || dipperFlashCount > 0)
+    if (dipper_flashtimer > 0)
     {
-        dipperFlashTimer++;
-
-        if (dipperFlashTimer >= DIPPER_FLASH_DURATION)
+        if (++dipper_flashtimer > DIPPER_FLASH_DURATION)
         {
-            if (dipperOn)
-            {
-                // Turn OFF
-                dipper.setVisible(false);
-                dipper.invalidate();
-                dipperOn = false;
-            }
+            dipper.setVisible(!dipper.isVisible());
+            dipper.invalidate();
+
+            if (!dipper.isVisible() && ++dipper_flashcount >= 4)
+            	dipper_flashtimer = dipper_flashcount = 0;
             else
-            {
-                // Turn ON (only if less than 2 times)
-                if (dipperFlashCount < 2)
-                {
-                    dipper.setVisible(true);
-                    dipper.invalidate();
-                    dipperOn = true;
-                    dipperFlashCount++;
-                }
-                else
-                {
-                    // Done: 2 flashes complete
-                    dipperFlashTimer = 0;
-                    dipperFlashCount = 0;
-                    return; // exit early
-                }
-            }
-            dipperFlashTimer = 1; // restart timer for next phase
+            	dipper_flashtimer = 1;
         }
     }
 
-    // --- Service: ON at 10s and stays ON ---
-    if (seconds >= 10)
+    // WARNING INDICATION LOGIC (Battery, Service, Engine, Fuel)
+    switch (seconds)
     {
-        service.setVisible(true);
-        service.invalidate();
-        white_fuel_icon.setVisible(false);
-        white_fuel_icon.invalidate();
-        battery_icon.setVisible(false);
-        battery_icon.invalidate();
-    }
-
-    // --- Engine: ON at 15s and stays ON ---
-    if (seconds >= 15)
-    {
-        engine.setVisible(true);
-        engine.invalidate();
-    }
-
-    // Display Battery Bar
-    if (seconds == 5)
-    {
+    case 5:
         Battery_full.setVisible(false);
         Battery_50.setVisible(true);
-        Battery_low.setVisible(false);
-        Battery_full.invalidate();
         Battery_50.invalidate();
-    }
-
-    else if (seconds == 9)
-    {
+        break;
+    case 9:
         Battery_50.setVisible(false);
         Battery_low.setVisible(true);
-        Battery_low.invalidate();
-        Battery_50.invalidate();
         low_battery_container.setVisible(true);
+        Battery_low.invalidate();
         low_battery_container.invalidate();
-    }
-
-    else if (seconds == 10)
-    {
+        break;
+    case 10:
+        service.setVisible(true);
+        white_fuel_icon.setVisible(false);
+        battery_icon.setVisible(false);
         low_battery_container.setVisible(false);
+        service.invalidate();
         low_battery_container.invalidate();
+        break;
+    case 13:
+        full_fuel.setVisible(false);
+        fuel_80.setVisible(true);
+        fuel_80.invalidate();
+        break;
+    case 15:
+        engine.setVisible(true);
+        engine.invalidate();
+        break;
+    case 16:
+        fuel_80.setVisible(false);
+        fuel_50.setVisible(true);
+        fuel_50.invalidate();
+        break;
+    case 19:
+        fuel_50.setVisible(false);
+        low_fuel.setVisible(true);
+        low_fuel_container.setVisible(true);
+        low_fuel.invalidate();
+        low_fuel_container.invalidate();
+        break;
     }
 
-    // === ANIMATION FRAME UPDATE ===
-    if (leftAnimTickCounter >= LEFT_ANIM_SPEED &&
-        rightAnimTickCounter >= RIGHT_ANIM_SPEED)
+    // ANIMATION FRAME UPDATE
+    if (++animation_tickcounter >= ANIM_SPEED)
     {
-        leftAnimTickCounter = 0;
-        rightAnimTickCounter = 0;
+    	animation_tickcounter = 0;
 
-        // === LEFT CLUSTER PHASE LOGIC (unchanged) ===
         switch (phase)
         {
         case Phase::Forward1:
-            leftAnimFrame++;
-            if (leftAnimFrame >= LEFT_ANIM_TOTAL_FRAMES - 1)
+            if (++animation_frame >= ANIM_TOTAL_FRAMES - 1)
                 phase = Phase::Reverse1;
             break;
         case Phase::Reverse1:
-            leftAnimFrame--;
-            if (leftAnimFrame <= 13)
+            if (--animation_frame <= 13)
                 phase = Phase::Forward2;
             break;
         case Phase::Forward2:
-            leftAnimFrame++;
-            if (leftAnimFrame >= 30)
+            if (++animation_frame >= 30)
                 phase = Phase::Reverse2;
             break;
         case Phase::Reverse2:
-            leftAnimFrame--;
-            if (leftAnimFrame <= 3)
+            if (--animation_frame <= 3)
                 phase = Phase::Forward3;
             break;
         case Phase::Forward3:
-            leftAnimFrame++;
-            if (leftAnimFrame >= 21)
+            if (++animation_frame >= 21)
                 phase = Phase::Forward1;
             break;
         }
 
-        // === CALCULATE KM/H & RPM % (from left frame) ===
-        int currentFrame = leftAnimFrame;
-        int gearValue = 0;
-        int kmhValue = 0;
+        // CALCULATE KM/H & RPM %
+        int KMH_value = 0;
+        int gear_value = 0;
 
-        if (currentFrame >= 1 && currentFrame <= 4)
+        if (animation_frame > 0 && animation_frame <= 4)
         {
-            gearValue = 1;
-            kmhValue = 3 + (currentFrame - 1) * 7 / 3;
+        	gear_value = 1;
+        	KMH_value = 3 + (animation_frame - 1) * 7 / 3;
         }
-        else if (currentFrame >= 4 && currentFrame <= 10)
+        else if (animation_frame > 4 && animation_frame <= 10)
         {
-            gearValue = 2;
-            kmhValue = 10 + (currentFrame - 4) * 20 / 6;
+        	gear_value = 2;
+            KMH_value = 10 + (animation_frame - 4) * 20 / 6;
         }
-        else if (currentFrame >= 10 && currentFrame <= 20)
+        else if (animation_frame > 10 && animation_frame <= 20)
         {
-            gearValue = 3;
-            kmhValue = 30 + (currentFrame - 10) * 20 / 10;
+        	gear_value = 3;
+            KMH_value = 30 + (animation_frame - 10) * 20 / 10;
         }
-        else if (currentFrame >= 20 && currentFrame <= 30)
+        else if (animation_frame > 20 && animation_frame <= 30)
         {
-            gearValue = 4;
-            kmhValue = 50 + (currentFrame - 20) * 30 / 10;
+        	gear_value = 4;
+            KMH_value = 50 + (animation_frame - 20) * 30 / 10;
         }
-        else if (currentFrame >= 30 && currentFrame <= 39)
+        else if (animation_frame > 30 && animation_frame <= 39)
         {
-            gearValue = 5;
-            kmhValue = 80 + (currentFrame - 30) * 40 / 9;
+        	gear_value = 5;
+            KMH_value = 80 + (animation_frame - 30) * 40 / 9;
         }
 
-        // === RPM % (0 to 100) ===
-        const int MAX_SPEED = 120;
-        int rpmPercent = (kmhValue * 100) / MAX_SPEED;
-        if (rpmPercent < 0)
-            rpmPercent = 0;
-        if (rpmPercent > 100)
-            rpmPercent = 100;
+        const int RMP_percent = (KMH_value * 100) / 120;
+        const int RMP_frame = (RMP_percent * 39) / 100;
 
-        // === RIGHT CLUSTER: MAP RPM % → FRAME 0 to 39 ===
-        int rightAnimFrame = (rpmPercent * 39) / 100; // 0 to 39 integer
-
-        // === UPDATE LEFT CLUSTER IMAGE ===
-        Left_c_cluster.setBitmap(Bitmap(BITMAP_LEFT_FRAME_000_ID + leftAnimFrame));
+        Left_c_cluster.setBitmap(Bitmap(BITMAP_LEFT_FRAME_000_ID + animation_frame));
+        Right_c_cluster.setBitmap(Bitmap(BITMAP_RIGHT_FRAME_000_ID + RMP_frame));
         Left_c_cluster.invalidate();
-
-        // === UPDATE RIGHT CLUSTER IMAGE (driven by RPM %) ===
-        Right_c_cluster.setBitmap(Bitmap(BITMAP_RIGHT_FRAME_000_ID + rightAnimFrame));
         Right_c_cluster.invalidate();
 
-        // === UPDATE TEXT WIDGETS ===
-        Unicode::snprintf(gearBuffer, GEAR_SIZE, "%d", gearValue);
-        Unicode::snprintf(km_per_hourBuffer, KM_PER_HOUR_SIZE, "%d", kmhValue);
-        Unicode::snprintf(RPMBuffer, RPM_SIZE, "%d", rpmPercent);
+        Unicode::snprintf(gearBuffer, GEAR_SIZE, "%d", gear_value);
+        Unicode::snprintf(km_per_hourBuffer, KM_PER_HOUR_SIZE, "%d", KMH_value);
+        Unicode::snprintf(RPMBuffer, RPM_SIZE, "%d", RMP_percent);
 
-        gear.invalidate();
+        gear.invalidate(); 
         km_per_hour.invalidate();
         RPM.invalidate();
     }
 
-    // === FUEL LEVEL ANIMATION (12 to 19 seconds) ===
-    if (indicatorTimer >= 12 * 60 && indicatorTimer <= 19 * 60) // 12s to 19s
-    {
-        fuelTimer++;
-
-        if (fuelState == FuelState::Full)
-        {
-            full_fuel.setVisible(false);
-            fuel_80.setVisible(true);
-            fuel_80.invalidate();
-            full_fuel.invalidate();
-            fuelState = FuelState::Fuel80;
-            fuelTimer = 0;
-        }
-        else if (fuelState == FuelState::Fuel80 && fuelTimer >= 180) // +3 sec
-        {
-            fuel_80.setVisible(false);
-            fuel_50.setVisible(true);
-            fuel_50.invalidate();
-            fuel_80.invalidate();
-            fuelState = FuelState::Fuel50;
-            fuelTimer = 0;
-        }
-        else if (fuelState == FuelState::Fuel50 && fuelTimer >= 180) // +3 sec
-        {
-            fuel_50.setVisible(false);
-            low_fuel.setVisible(true);
-            low_fuel.invalidate();
-            fuel_50.invalidate();
-            fuelState = FuelState::Low;
-            fuelTimer = 0;
-            low_fuel_container.setVisible(true);
-            low_fuel_container.invalidate();
-        }
-    }
-
-    // === TOTAL KM: 0 → 200 km in 20 seconds ===
-    int currentKm = (indicatorTimer * 201) / 1200;
-    Unicode::snprintf(total_kmBuffer, TOTAL_KM_SIZE, "%d", currentKm);
+    // TOTAL KM (0 → 200)
+    const int totalKM = (tickCounter * 201) / 1200;
+    Unicode::snprintf(total_kmBuffer, TOTAL_KM_SIZE, "%d", totalKM);
     total_km.invalidate();
 
     if (demo_running)
-    {
         updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
-    }
-
-    // === INCREMENT TIMER ===
-    indicatorTimer++;
 }
 
 void ClusterView::updateruntime_metrics(int fps, int cpu, int renderTime)

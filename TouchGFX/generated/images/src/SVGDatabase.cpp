@@ -369,30 +369,30 @@ static const VGShape svg_car_body_shape_0 = {
     &svg_car_body_shape_1                                     // next
 };
 
-static const uint8_t svg_ellipse_18_shape_0_commands[] = {
+static const uint8_t svg_ellipse_shape_0_commands[] = {
     VECTOR_PRIM_MOVE, VECTOR_PRIM_BEZIER_CUBIC, VECTOR_PRIM_BEZIER_CUBIC, VECTOR_PRIM_BEZIER_CUBIC,
     VECTOR_PRIM_BEZIER_CUBIC, VECTOR_PRIM_HLINE, VECTOR_PRIM_BEZIER_CUBIC, VECTOR_PRIM_BEZIER_CUBIC,
     VECTOR_PRIM_BEZIER_CUBIC, VECTOR_PRIM_BEZIER_CUBIC, VECTOR_PRIM_HLINE, VECTOR_PRIM_CLOSE
 };
 
-static const float svg_ellipse_18_shape_0_points[] = {
+static const float svg_ellipse_shape_0_points[] = {
     603.0000f, 0.0000f, 603.0000f, 51.9824f, 571.2350f, 101.8360f, 514.6930f, 138.5930f, 458.1500f, 175.3500f, 381.4630f, 196.0000f, 301.5000f, 196.0000f, 221.5370f, 196.0000f, 144.8500f, 175.3500f, 88.3073f, 138.5930f,
     31.7651f, 101.8360f, 0.0000f, 51.9825f, 0.0000f, 0.0000f, 11.1076f, 11.1076f, 50.0674f, 41.7024f, 98.0841f, 96.1616f, 133.4870f, 150.6210f, 168.8900f, 224.4830f, 188.7790f, 301.5000f, 188.7790f,
     378.5170f, 188.7790f, 452.3790f, 168.8900f, 506.8380f, 133.4870f, 561.2980f, 98.0840f, 591.8920f, 50.0673f, 591.8920f, 0.0000f, 603.0000f,
 };
 
-static const VGFixedColor svg_ellipse_18_shape_0_fill = {
+static const VGFixedColor svg_ellipse_shape_0_fill = {
     0xff7cf4f8 // ARGB
 };
 
-static const VGShape svg_ellipse_18_shape_0 = {
+static const VGShape svg_ellipse_shape_0 = {
     12, 52,                                                   // numCommands, numPoints
-    svg_ellipse_18_shape_0_commands,                          // commands
-    svg_ellipse_18_shape_0_points,                            // points
+    svg_ellipse_shape_0_commands,                             // commands
+    svg_ellipse_shape_0_points,                               // points
     VG_FILL_NON_ZERO,                                         // drawingMode
     VG_FIXED_COLOR,                                           // fillMode
     VG_NONE,                                                  // strokeMode
-    &svg_ellipse_18_shape_0_fill,                             // fillPaint
+    &svg_ellipse_shape_0_fill,                                // fillPaint
     0,                                                        // strokePaint
     0.0000f,                                                  // strokeWidth
     VG_STROKE_LINEJOIN_MITER,                                 // strokeLineJoin
@@ -4155,7 +4155,7 @@ static const VGShape svg_tire_pair5_shape_0 = {
 
 static const touchgfx::VGObject svg_database[] = {
     { 0.0000f, 0.0000f, 433.7710f, 115.1800f, 434.0000f, 116.0000f, &svg_car_body_shape_0 },
-    { 0.0000f, 0.0000f, 603.0000f, 196.0000f, 603.0000f, 196.0000f, &svg_ellipse_18_shape_0 },
+    { 0.0000f, 0.0000f, 603.0000f, 196.0000f, 603.0000f, 196.0000f, &svg_ellipse_shape_0 },
     { -22.3018f, -22.3047f, 96.6036f, 96.6035f, 52.0000f, 52.0000f, &svg_tire1_shape_0 },
     { -3.0000f, -3.0000f, 56.0000f, 56.0000f, 50.0000f, 50.0000f, &svg_tire2_shape_0 },
     { 0.0000f, 0.0000f, 50.0000f, 50.0000f, 50.0000f, 50.0000f, &svg_tire3_shape_0 },

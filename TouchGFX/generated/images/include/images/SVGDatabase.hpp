@@ -9,7 +9,7 @@
 enum SVGImages
 {
     SVG_CAR_BODY_ID = 0,
-    SVG_ELLIPSE_18_ID = 1,
+    SVG_ELLIPSE_ID = 1,
     SVG_TIRE1_ID = 2,
     SVG_TIRE2_ID = 3,
     SVG_TIRE3_ID = 4,
