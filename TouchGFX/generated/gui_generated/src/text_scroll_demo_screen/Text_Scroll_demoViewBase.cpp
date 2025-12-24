@@ -25,7 +25,7 @@ Text_Scroll_demoViewBase::Text_Scroll_demoViewBase()
     text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LTDX));
     scrollableContainer1.add(text);
 
-    title.setXY(231, 15);
+    title.setXY(233, 15);
     title.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     title.setLinespacing(0);
     title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_R9Z1));

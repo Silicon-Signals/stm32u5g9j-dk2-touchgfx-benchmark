@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    virtual void handleClickEvent(const touchgfx::ClickEvent& evt) override;
     virtual void handleTickEvent();
     void updateruntime_metrics(int fps, int cpu, int renderTime);
     virtual void runStartButtonAnimation();

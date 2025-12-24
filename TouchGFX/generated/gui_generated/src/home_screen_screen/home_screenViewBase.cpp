@@ -163,91 +163,6 @@ void home_screenViewBase::setupScreen()
 
 void home_screenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
 {
-    if (&src == &start_btn)
-    {
-        //hide_start_text
-        //When start_btn clicked hide Start_text
-        //Hide Start_text
-        Start_text.setVisible(false);
-        Start_text.invalidate();
-        //display_video_demo
-        //When start_btn clicked show video_demo
-        //Show video_demo
-        video_demo.setVisible(true);
-        video_demo.invalidate();
-    
-        //move_out_video_demo
-        //When display_video_demo completed move video_demo
-        //Move video_demo to x:234, y:313 with SineIn easing in 800 ms (48 Ticks)
-        video_demo.clearMoveAnimationEndedAction();
-        video_demo.startMoveAnimation(234, 313, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
-        //display_image_demo
-        //When start_btn clicked show image_demo
-        //Show image_demo
-        image_demo.setVisible(true);
-        image_demo.invalidate();
-    
-        //move_out_image_demo
-        //When display_image_demo completed move image_demo
-        //Move image_demo to x:203, y:191 with SineIn easing in 800 ms (48 Ticks)
-        image_demo.clearMoveAnimationEndedAction();
-        image_demo.startMoveAnimation(203, 191, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
-        //display_static_demo
-        //When start_btn clicked show static_demo
-        //Show static_demo
-        static_demo.setVisible(true);
-        static_demo.invalidate();
-    
-        //move_out_static_demo
-        //When display_static_demo completed move static_demo
-        //Move static_demo to x:284, y:64 with SineIn easing in 800 ms (48 Ticks)
-        static_demo.clearMoveAnimationEndedAction();
-        static_demo.startMoveAnimation(284, 64, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
-        //display_SVG_demo
-        //When start_btn clicked show SVG_demo
-        //Show SVG_demo
-        SVG_demo.setVisible(true);
-        SVG_demo.invalidate();
-    
-        //move_out_SVG_demo
-        //When display_SVG_demo completed move SVG_demo
-        //Move SVG_demo to x:447, y:64 with SineIn easing in 800 ms (48 Ticks)
-        SVG_demo.clearMoveAnimationEndedAction();
-        SVG_demo.startMoveAnimation(447, 64, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
-        //display_text_scroll_demo
-        //When start_btn clicked show Text_scroll_demo
-        //Show Text_scroll_demo
-        Text_scroll_demo.setVisible(true);
-        Text_scroll_demo.invalidate();
-    
-        //move_out_text_scroll_demo
-        //When display_text_scroll_demo completed move Text_scroll_demo
-        //Move Text_scroll_demo to x:534, y:191 with SineIn easing in 800 ms (48 Ticks)
-        Text_scroll_demo.clearMoveAnimationEndedAction();
-        Text_scroll_demo.startMoveAnimation(534, 191, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
-        //display_close_btn
-        //When start_btn clicked show close_btn
-        //Show close_btn
-        close_btn.setVisible(true);
-        close_btn.invalidate();
-    
-        //move_out_close_btn
-        //When display_close_btn completed move close_btn
-        //Move close_btn to x:370, y:373 with SineIn easing in 800 ms (48 Ticks)
-        close_btn.clearMoveAnimationEndedAction();
-        close_btn.startMoveAnimation(370, 373, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
-        //display_cluster_demo
-        //When start_btn clicked show cluster_demo
-        //Show cluster_demo
-        cluster_demo.setVisible(true);
-        cluster_demo.invalidate();
-    
-        //move_out_cluster_demo
-        //When display_cluster_demo completed move cluster_demo
-        //Move cluster_demo to x:495, y:320 with SineIn easing in 800 ms (48 Ticks)
-        cluster_demo.clearMoveAnimationEndedAction();
-        cluster_demo.startMoveAnimation(495, 320, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
-    }
     if (&src == &close_btn)
     {
         //move_in_video_demo
@@ -334,6 +249,20 @@ void home_screenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButt
         //When Result_screen_btn clicked change screen to Result_screen
         //Go to Result_screen with no screen transition
         application().gotoResult_screenScreenNoTransition();
+    }
+    if (&src == &start_btn)
+    {
+        //display_cluster_demo
+        //When start_btn clicked show cluster_demo
+        //Show cluster_demo
+        cluster_demo.setVisible(true);
+        cluster_demo.invalidate();
+    
+        //move_out_cluster_demo
+        //When display_cluster_demo completed move cluster_demo
+        //Move cluster_demo to x:495, y:320 with SineIn easing in 800 ms (48 Ticks)
+        cluster_demo.clearMoveAnimationEndedAction();
+        cluster_demo.startMoveAnimation(495, 320, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
     }
     if (&src == &cluster_demo)
     {

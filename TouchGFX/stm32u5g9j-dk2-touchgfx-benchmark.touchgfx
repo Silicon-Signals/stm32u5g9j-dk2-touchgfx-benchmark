@@ -401,185 +401,6 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "hide_start_text",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "start_btn"
-            },
-            "Action": {
-              "Type": "ActionHide",
-              "ActionComponent": "Start_text"
-            }
-          },
-          {
-            "InteractionName": "display_video_demo",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "start_btn"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "video_demo"
-            }
-          },
-          {
-            "InteractionName": "move_out_video_demo",
-            "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "display_video_demo"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 234,
-              "Y": 313,
-              "Easing": "Sine",
-              "EasingOption": "In",
-              "Duration": 800,
-              "ActionComponent": "video_demo"
-            }
-          },
-          {
-            "InteractionName": "display_image_demo",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "start_btn"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "image_demo"
-            }
-          },
-          {
-            "InteractionName": "move_out_image_demo",
-            "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "display_image_demo"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 203,
-              "Y": 191,
-              "Easing": "Sine",
-              "EasingOption": "In",
-              "Duration": 800,
-              "ActionComponent": "image_demo"
-            }
-          },
-          {
-            "InteractionName": "display_static_demo",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "start_btn"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "static_demo"
-            }
-          },
-          {
-            "InteractionName": "move_out_static_demo",
-            "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "display_static_demo"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 284,
-              "Y": 64,
-              "Easing": "Sine",
-              "EasingOption": "In",
-              "Duration": 800,
-              "ActionComponent": "static_demo"
-            }
-          },
-          {
-            "InteractionName": "display_SVG_demo",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "start_btn"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "SVG_demo"
-            }
-          },
-          {
-            "InteractionName": "move_out_SVG_demo",
-            "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "display_SVG_demo"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 447,
-              "Y": 64,
-              "Easing": "Sine",
-              "EasingOption": "In",
-              "Duration": 800,
-              "ActionComponent": "SVG_demo"
-            }
-          },
-          {
-            "InteractionName": "display_text_scroll_demo",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "start_btn"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "Text_scroll_demo"
-            }
-          },
-          {
-            "InteractionName": "move_out_text_scroll_demo",
-            "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "display_text_scroll_demo"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 534,
-              "Y": 191,
-              "Easing": "Sine",
-              "EasingOption": "In",
-              "Duration": 800,
-              "ActionComponent": "Text_scroll_demo"
-            }
-          },
-          {
-            "InteractionName": "display_close_btn",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "start_btn"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "close_btn"
-            }
-          },
-          {
-            "InteractionName": "move_out_close_btn",
-            "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "display_close_btn"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 370,
-              "Y": 373,
-              "Easing": "Sine",
-              "EasingOption": "In",
-              "Duration": 800,
-              "ActionComponent": "close_btn"
-            }
-          },
-          {
             "InteractionName": "move_in_video_demo",
             "HasCompletedTrigger": true,
             "Trigger": {
@@ -1609,7 +1430,7 @@
               {
                 "Type": "TextArea",
                 "Name": "title",
-                "X": 231,
+                "X": 233,
                 "Y": 15,
                 "Width": 338,
                 "Height": 44,
@@ -2689,7 +2510,7 @@
       }
     ],
     "CustomContainerDefinitions": [],
-    "Name": "Benchmark_demo",
+    "Name": "STM32U5G9-DK2-Benchmark",
     "Resolution": {
       "Width": 800,
       "Height": 480

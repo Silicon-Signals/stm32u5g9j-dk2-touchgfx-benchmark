@@ -220,33 +220,42 @@ void StartDefaultTask(void *argument)
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 
-int GetTaskCPUUsage(osThreadId_t thread_id) {
+int GetTaskCPUUsage(osThreadId_t thread_id)
+{
+    static uint32_t lastTotalRunTime = 0;
+    static uint32_t lastTaskRunTime = 0;
+
     UBaseType_t taskCount;
     TaskStatus_t *pxTaskStatusArray;
     uint32_t totalRunTime;
+    int result = 0;
 
     taskCount = uxTaskGetNumberOfTasks();
     pxTaskStatusArray = pvPortMalloc(taskCount * sizeof(TaskStatus_t));
 
     if (pxTaskStatusArray != NULL) {
         taskCount = uxTaskGetSystemState(pxTaskStatusArray, taskCount, &totalRunTime);
+        uint32_t deltaTotal = totalRunTime - lastTotalRunTime;
 
-        if (totalRunTime > 0) {
-            for (UBaseType_t i = 0; i < taskCount; i++) {
-                if (pxTaskStatusArray[i].xHandle == (TaskHandle_t)thread_id) {
-                    g_cpu_usage = (uint32_t)(((float)pxTaskStatusArray[i].ulRunTimeCounter / (float)totalRunTime) * 100.0f);
+        if (deltaTotal > 0)
+        {
+            for (UBaseType_t i = 0; i < taskCount; i++)
+            {
+                if (pxTaskStatusArray[i].xHandle == (TaskHandle_t)thread_id)
+                {
+                    uint32_t deltaTask = pxTaskStatusArray[i].ulRunTimeCounter - lastTaskRunTime;
+                    percentage = ((float)deltaTask / (float)deltaTotal) * 100.0f;
+                    result = (int)percentage;
 
-                    if(g_cpu_usage < 1) g_cpu_usage = 1;
-                    if(g_cpu_usage > 99) g_cpu_usage =99;
-
-                    vPortFree(pxTaskStatusArray);
-                    return (int)g_cpu_usage;
+                    lastTaskRunTime = pxTaskStatusArray[i].ulRunTimeCounter;
+                    break;
                 }
             }
         }
+        lastTotalRunTime = totalRunTime;
+        vPortFree(pxTaskStatusArray);
     }
-    vPortFree(pxTaskStatusArray);
-    return 0;
+    return result;
 }
 
 void metrics_print(void) {
@@ -265,47 +274,43 @@ void metrics_print(void) {
         g_render_time = render_time; // In ms
         last_frames = frame_counter;
 
-        //Collect samples if demo is running
-                if (demo_running) {
-                    if (sample_count < NUM_SAMPLES) {
-                        fps_samples[sample_count] = g_fps;
-                        render_time_samples[sample_count] = g_render_time;
-                        cpu_usage_samples[sample_count] = g_cpu_usage;
-                        stack_usage_samples[sample_count] = g_stack_usage;
-                        heap_usage_samples[sample_count] = g_heap_usage;
-                        sample_count++;
-                    }
+        // Collect samples if demo is running
+        if (demo_running)
+        {
+            if (sample_count < NUM_SAMPLES)
+            {
+                fps_samples[sample_count] = g_fps;
+                render_time_samples[sample_count] = g_render_time;
+                cpu_usage_samples[sample_count] = g_cpu_usage;
+                stack_usage_samples[sample_count] = g_stack_usage;
+                heap_usage_samples[sample_count] = g_heap_usage;
+                sample_count++;
+            }
 
-                    // After 10 samples, calculate averages and complete demo
-                    if (sample_count >= NUM_SAMPLES) {
-                        // Calculate averages
-                        uint32_t sum_fps = 0, sum_render_time = 0, sum_cpu_usage = 0, sum_stack_usage = 0, sum_heap_usage = 0;
-                        for (uint32_t i = 0; i < NUM_SAMPLES; i++) {
-                            sum_fps += fps_samples[i];
-                            sum_render_time += render_time_samples[i];
-                            sum_cpu_usage += cpu_usage_samples[i];
-                            sum_stack_usage += stack_usage_samples[i];
-                            sum_heap_usage += heap_usage_samples[i];
-                        }
-                        avg_fps = sum_fps / NUM_SAMPLES;
-                        avg_render_time = sum_render_time / NUM_SAMPLES;
-                        avg_cpu_usage = sum_cpu_usage / NUM_SAMPLES;
-                        avg_stack_usage = sum_stack_usage / NUM_SAMPLES;
-                        avg_heap_usage = sum_heap_usage / NUM_SAMPLES;
-
-                        demo_running = false;
-                        demo_complete = true;
-                        sample_count = 0;
-                    }
+            // After 10 samples, calculate averages and complete demo
+            if (sample_count >= NUM_SAMPLES)
+            {
+                // Calculate averages
+                uint32_t sum_fps = 0, sum_render_time = 0, sum_cpu_usage = 0, sum_stack_usage = 0, sum_heap_usage = 0;
+                for (uint32_t i = 0; i < NUM_SAMPLES; i++)
+                {
+                    sum_fps += fps_samples[i];
+                    sum_render_time += render_time_samples[i];
+                    sum_cpu_usage += cpu_usage_samples[i];
+                    sum_stack_usage += stack_usage_samples[i];
+                    sum_heap_usage += heap_usage_samples[i];
                 }
+                avg_fps = sum_fps / NUM_SAMPLES;
+                avg_render_time = sum_render_time / NUM_SAMPLES;
+                avg_cpu_usage = sum_cpu_usage / NUM_SAMPLES;
+                avg_stack_usage = sum_stack_usage / NUM_SAMPLES;
+                avg_heap_usage = sum_heap_usage / NUM_SAMPLES;
 
-        // Optional: Debug via UART
-        char buffer[500];
-        sprintf(buffer, "FPS: %lu, Render Time: %lu ms, CPU: %lu%%, Stack: %lu KB, Heap: %lu KB\r\n",
-                g_fps, g_render_time, g_cpu_usage, g_stack_usage, g_heap_usage);
-//        sprintf(buffer, "FPS: %lu, Render Time: %lu ms, CPU: %lu%%, Stack: %lu KB, Heap: %lu KB\r\n",
-//        		avg_fps, avg_render_time, avg_cpu_usage, avg_stack_usage, avg_heap_usage);
-//        HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+                demo_running = false;
+                demo_complete = true;
+                sample_count = 0;
+            }
+        }
     }
 }
 

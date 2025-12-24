@@ -1,12 +1,24 @@
-# STM32U5G9J-DK2 TBS
+## Install Required Software
 
-The default IDE is set to STM32CubeIDE, to change IDE open the STM32U5G9J-DK2.ioc with STM32CubeMX and select from the supported IDEs (EWARM, MDK-ARM and STM32CubeIDE). Supports flashing of the STM32U5G9J-DK2 board directly from TouchGFX Designer using GCC and STM32CubeProgrammer. Flashing the board requires STM32CubeProgrammer which can be downloaded from the ST webpage.
+Download and install STM32CubeIDE from STMicroelectronics.
 
-This TBS is configured for 800 x 480 pixels 16 bpp screen resolution.
+Operating System: Windows
 
-Performance testing can be done using the GPIO pins designated with the following signals in Spare GPIO connector on the underside of the board:
+## Set Up and Run the Project
 
-- VSYNC_FREQ  - PC0  (CN1 pin 14)
-- RENDER_TIME - PC10 (CN1 pin 16)
-- FRAME_RATE  - PC11 (CN1 pin 18)
-- MCU_ACTIVE  - PC12 (CN1 pin 20)
+Clone this repository or download the ZIP file:
+
+```bash
+$ https://github.com/Silicon-Signals/stm32u5g9j-dk2-touchgfx-benchmark.git
+```
+
+After cloning, open the project in STM32CubeIDE:
+Go to the folder
+
+stm32u5g9j-dk2-touchgfx-benchmark/STM32CubeIDE/
+and open the .project file in STM32CubeIDE.
+
+Click the hammer icon to build the project (use the Debug configuration; it already includes optimization).
+
+Click the play icon to upload the project to the board.
+Once uploaded, the UI will appear on the display.

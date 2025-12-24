@@ -154,7 +154,7 @@ void ClusterView::handleTickEvent()
         battery_icon.setVisible(false);
         low_battery_container.setVisible(false);
         service.invalidate();
-	white_fuel_icon.invalidate();
+        white_fuel_icon.invalidate();
         low_battery_container.invalidate();
         break;
     case 13:
