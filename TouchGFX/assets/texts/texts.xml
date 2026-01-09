@@ -6,6 +6,21 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_6SOH" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_OC63" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">&lt;number&gt; MB</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z3KN" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_PHCP" Alignment="Left" TypographyId="number">
+        <Translation Language="GB">&lt;number&gt; MB</Translation>
+      </Text>
+      <Text Id="__SingleUse_IY55" Alignment="Left" TypographyId="Default_bold">
+        <Translation Language="GB">External Flash Usage</Translation>
+      </Text>
       <Text Id="__SingleUse_FN08" Alignment="Left" TypographyId="string">
         <Translation Language="GB">Cluster Test</Translation>
       </Text>
@@ -232,10 +247,10 @@
         <Translation Language="GB">Render TIme (Frame Latency)</Translation>
       </Text>
       <Text Id="__SingleUse_2G94" Alignment="Left" TypographyId="Default_bold">
-        <Translation Language="GB">Heap Usage</Translation>
+        <Translation Language="GB">Internal Flash Usage</Translation>
       </Text>
       <Text Id="__SingleUse_P0AJ" Alignment="Left" TypographyId="Default_bold">
-        <Translation Language="GB">Stack Usage</Translation>
+        <Translation Language="GB">RAM Usage</Translation>
       </Text>
       <Text Id="__SingleUse_EFF4" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">Frame Rate (FPS)</Translation>
@@ -253,13 +268,7 @@
         <Translation Language="GB">00</Translation>
       </Text>
       <Text Id="__SingleUse_NT68" Alignment="Left" TypographyId="number">
-        <Translation Language="GB">&lt;number&gt; KB</Translation>
-      </Text>
-      <Text Id="__SingleUse_GFGI" Alignment="Left" TypographyId="number">
-        <Translation Language="GB">00</Translation>
-      </Text>
-      <Text Id="__SingleUse_Q895" Alignment="Left" TypographyId="number">
-        <Translation Language="GB">&lt;number&gt; KB</Translation>
+        <Translation Language="GB">&lt;number&gt; KB       </Translation>
       </Text>
       <Text Id="__SingleUse_NR8E" Alignment="Left" TypographyId="number">
         <Translation Language="GB">00</Translation>

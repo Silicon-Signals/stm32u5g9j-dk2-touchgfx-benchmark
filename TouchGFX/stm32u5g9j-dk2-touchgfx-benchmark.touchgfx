@@ -823,6 +823,8 @@
           {
             "Type": "Box",
             "Name": "background",
+            "X": -2,
+            "Y": -3,
             "Width": 800,
             "Height": 480,
             "Color": {
@@ -1529,9 +1531,11 @@
           {
             "Type": "Image",
             "Name": "background",
+            "X": 2,
+            "Y": -3,
             "Width": 800,
             "Height": 480,
-            "RelativeFilename": "Object Result.png"
+            "RelativeFilename": "object_result.png"
           },
           {
             "Type": "Container",
@@ -1544,6 +1548,7 @@
               {
                 "Type": "Box",
                 "Name": "box1",
+                "Y": -5,
                 "Width": 110,
                 "Height": 30,
                 "Alpha": 126
@@ -1617,7 +1622,7 @@
             "Type": "TextArea",
             "Name": "CPU",
             "X": 428,
-            "Y": 329,
+            "Y": 317,
             "Width": 35,
             "Height": 18,
             "TextId": "__SingleUse_O6I8",
@@ -1638,7 +1643,7 @@
             "Type": "TextArea",
             "Name": "Render_time",
             "X": 428,
-            "Y": 296,
+            "Y": 281,
             "Width": 43,
             "Height": 18,
             "TextId": "__SingleUse_VEM3",
@@ -1657,10 +1662,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Heap",
+            "Name": "Internal_Flash",
             "X": 428,
-            "Y": 260,
-            "Width": 41,
+            "Y": 211,
+            "Width": 69,
             "Height": 18,
             "TextId": "__SingleUse_NT68",
             "TextRotation": "0",
@@ -1678,12 +1683,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Stack",
-            "X": 428,
-            "Y": 222,
-            "Width": 41,
+            "Name": "External_Flash",
+            "X": 429,
+            "Y": 247,
+            "Width": 47,
             "Height": 18,
-            "TextId": "__SingleUse_Q895",
+            "TextId": "__SingleUse_PHCP",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1692,7 +1697,28 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_GFGI",
+              "TextId": "__SingleUse_Z3KN",
+              "UseBuffer": true,
+              "BufferSize": 5
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RAM_usage",
+            "X": 428,
+            "Y": 174,
+            "Width": 47,
+            "Height": 18,
+            "TextId": "__SingleUse_OC63",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_6SOH",
               "UseBuffer": true,
               "BufferSize": 5
             }
@@ -1700,8 +1726,8 @@
           {
             "Type": "TextArea",
             "Name": "FPS",
-            "X": 428,
-            "Y": 187,
+            "X": 431,
+            "Y": 139,
             "Width": 18,
             "Height": 18,
             "TextId": "__SingleUse_U2PI",
@@ -1722,7 +1748,7 @@
             "Type": "TextArea",
             "Name": "Video_test_name",
             "X": 428,
-            "Y": 152,
+            "Y": 102,
             "Width": 79,
             "Height": 21,
             "Visible": false,
@@ -1738,8 +1764,8 @@
           {
             "Type": "TextArea",
             "Name": "Image_test_name",
-            "X": 425,
-            "Y": 152,
+            "X": 428,
+            "Y": 102,
             "Width": 55,
             "Height": 21,
             "Visible": false,
@@ -1755,8 +1781,8 @@
           {
             "Type": "TextArea",
             "Name": "Static_test_name",
-            "X": 428,
-            "Y": 150,
+            "X": 431,
+            "Y": 102,
             "Width": 77,
             "Height": 21,
             "Visible": false,
@@ -1772,8 +1798,8 @@
           {
             "Type": "TextArea",
             "Name": "SVG_test_name",
-            "X": 425,
-            "Y": 152,
+            "X": 428,
+            "Y": 103,
             "Width": 66,
             "Height": 21,
             "Visible": false,
@@ -1790,7 +1816,7 @@
             "Type": "TextArea",
             "Name": "Text_scroll_test_name",
             "X": 428,
-            "Y": 150,
+            "Y": 102,
             "Width": 112,
             "Height": 21,
             "Visible": false,
@@ -1806,8 +1832,8 @@
           {
             "Type": "TextArea",
             "Name": "Cluster_test_name",
-            "X": 428,
-            "Y": 150,
+            "X": 426,
+            "Y": 101,
             "Width": 87,
             "Height": 21,
             "Visible": false,
@@ -1842,7 +1868,7 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 165,
-            "Y": 153,
+            "Y": 102,
             "Width": 31,
             "Height": 21,
             "TextId": "__SingleUse_5360",
@@ -1858,7 +1884,7 @@
             "Type": "TextArea",
             "Name": "FPS_text",
             "X": 165,
-            "Y": 186,
+            "Y": 138,
             "Width": 128,
             "Height": 21,
             "TextId": "__SingleUse_EFF4",
@@ -1872,10 +1898,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Stack_text",
-            "X": 165,
-            "Y": 222,
-            "Width": 91,
+            "Name": "RAM_text",
+            "X": 163,
+            "Y": 172,
+            "Width": 87,
             "Height": 21,
             "TextId": "__SingleUse_P0AJ",
             "TextRotation": "0",
@@ -1888,10 +1914,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Heap_text",
+            "Name": "Internal_Flash_text",
             "X": 165,
-            "Y": 260,
-            "Width": 89,
+            "Y": 209,
+            "Width": 151,
             "Height": 21,
             "TextId": "__SingleUse_2G94",
             "TextRotation": "0",
@@ -1904,9 +1930,25 @@
           },
           {
             "Type": "TextArea",
+            "Name": "External_Flash_text",
+            "X": 163,
+            "Y": 245,
+            "Width": 153,
+            "Height": 21,
+            "TextId": "__SingleUse_IY55",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
             "Name": "Render_time_text",
-            "X": 165,
-            "Y": 296,
+            "X": 163,
+            "Y": 279,
             "Width": 222,
             "Height": 21,
             "TextId": "__SingleUse_X1YP",
@@ -1922,7 +1964,7 @@
             "Type": "TextArea",
             "Name": "CPU_text",
             "X": 165,
-            "Y": 329,
+            "Y": 314,
             "Width": 90,
             "Height": 21,
             "TextId": "__SingleUse_TN6S",

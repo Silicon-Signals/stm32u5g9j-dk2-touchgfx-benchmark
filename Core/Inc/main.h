@@ -34,8 +34,9 @@ extern "C" {
 extern volatile uint32_t avg_fps;
 extern volatile uint32_t avg_render_time;
 extern volatile uint32_t avg_cpu_usage;
-extern volatile uint32_t avg_stack_usage;
-extern volatile uint32_t avg_heap_usage;
+extern volatile uint32_t avg_ram_usage;
+extern volatile uint32_t avg_internal_flash;
+extern volatile uint32_t avg_external_flash;
 
 extern volatile uint32_t g_fps;
 extern volatile uint32_t g_cpu_usage;

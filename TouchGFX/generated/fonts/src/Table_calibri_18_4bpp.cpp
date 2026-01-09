@@ -19,8 +19,9 @@ KEEP extern const touchgfx::GlyphNode glyphs_calibri_18_4bpp[] FONT_TABLE_LOCATI
     {   636, 0x003F,   7,  13,  13,   1,   8,   0,   0, 0x00 },
     {   688, 0x0042,   8,  12,  12,   1,  10,   0,   0, 0x00 },
     {   736, 0x004B,   8,  12,  12,   1,   9,   0,   0, 0x00 },
-    {   784, 0x006D,  13,   9,   9,   1,  14,   0,   0, 0x00 },
-    {   847, 0x0073,   7,   9,   9,   0,   7,   0,   0, 0x00 }
+    {   784, 0x004D,  13,  12,  12,   1,  15,   0,   0, 0x00 },
+    {   868, 0x006D,  13,   9,   9,   1,  14,   0,   0, 0x00 },
+    {   931, 0x0073,   7,   9,   9,   0,   7,   0,   0, 0x00 }
 };
 
 // calibri_18_4bpp
@@ -39,6 +40,6 @@ touchgfx::GeneratedFont& getFont_calibri_18_4bpp();
 
 touchgfx::GeneratedFont& getFont_calibri_18_4bpp()
 {
-    static touchgfx::GeneratedFont calibri_18_4bpp(glyphs_calibri_18_4bpp, 17, 18, 18, 0, 0, 4, 1, 0, 0, unicodes_calibri_18_4bpp, kerning_calibri_18_4bpp, 63, 0, 0, &calibri_contextualFormsTable);
+    static touchgfx::GeneratedFont calibri_18_4bpp(glyphs_calibri_18_4bpp, 18, 18, 18, 0, 0, 4, 1, 0, 0, unicodes_calibri_18_4bpp, kerning_calibri_18_4bpp, 63, 0, 0, &calibri_contextualFormsTable);
     return calibri_18_4bpp;
 }

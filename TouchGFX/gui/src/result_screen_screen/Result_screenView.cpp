@@ -10,7 +10,7 @@ void Result_screenView::setupScreen()
 {
     Result_screenViewBase::setupScreen();
 
-    updateTextAreas(avg_fps, avg_stack_usage, avg_cpu_usage, avg_render_time, avg_heap_usage);
+    updateTextAreas(avg_fps, avg_ram_usage, avg_internal_flash,  avg_external_flash, avg_render_time, avg_cpu_usage);
     updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
 
     application().autoStartDemo = true;
@@ -26,7 +26,7 @@ void Result_screenView::handleTickEvent()
     updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
 }
 
-void Result_screenView::updateTextAreas(int fps, int stack, int cpu, int renderTime, int heap)
+void Result_screenView::updateTextAreas(int fps, int ram_usage, int internal_flash, int external_flash, int renderTime, int cpu)
 {
     // Hide all Test name by default
     Video_test_name.setVisible(false);
@@ -67,17 +67,20 @@ void Result_screenView::updateTextAreas(int fps, int stack, int cpu, int renderT
     Unicode::snprintf(FPSBuffer, 10, "%d", fps);
     FPS.invalidate();
 
-    Unicode::snprintf(StackBuffer, 10, "%d", stack);
-    Stack.invalidate();
+    Unicode::snprintf(RAM_usageBuffer, 10, "%d", ram_usage);
+    RAM_usage.invalidate();
 
-    Unicode::snprintf(CPUBuffer, 10, "%d", cpu);
-    CPU.invalidate();
+    Unicode::snprintf(Internal_FlashBuffer, 10, "%d", internal_flash);
+    Internal_Flash.invalidate();
+
+    Unicode::snprintf(External_FlashBuffer, 10, "%d", external_flash);
+    External_Flash.invalidate();
 
     Unicode::snprintf(Render_timeBuffer, 10, "%d", renderTime);
     Render_time.invalidate();
-
-    Unicode::snprintf(HeapBuffer, 10, "%d", heap);
-    Heap.invalidate();
+    
+    Unicode::snprintf(CPUBuffer, 10, "%d", cpu);
+    CPU.invalidate(); 
 }
 
 void Result_screenView::updateruntime_metrics(int fps, int cpu, int renderTime)

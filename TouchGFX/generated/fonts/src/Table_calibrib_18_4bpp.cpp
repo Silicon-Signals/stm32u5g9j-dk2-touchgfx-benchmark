@@ -41,19 +41,18 @@ KEEP extern const touchgfx::GlyphNode glyphs_calibrib_18_4bpp[] FONT_TABLE_LOCAT
     {  1950, 0x0064,   9,  13,  13,   0,  10,   0,   0, 0x00 },
     {  2015, 0x0065,   9,   9,   9,   0,   9,   0,   0, 0x00 },
     {  2060, 0x0067,   9,  12,   9,   0,   9,   0,   0, 0x00 },
-    {  2120, 0x0069,   3,  13,  13,   1,   4,   0,   0, 0x00 },
-    {  2146, 0x006B,   8,  13,  13,   1,   9,   0,   0, 0x00 },
+    {  2120, 0x0068,   8,  13,  13,   1,  10,   0,   0, 0x00 },
+    {  2172, 0x0069,   3,  13,  13,   1,   4,   0,   0, 0x00 },
     {  2198, 0x006C,   3,  13,  13,   1,   4,   0,   0, 0x00 },
     {  2224, 0x006D,  13,   9,   9,   1,  15,   0,   0, 0x00 },
     {  2287, 0x006E,   8,   9,   9,   1,  10,   0,   0, 0x00 },
     {  2323, 0x006F,   9,   9,   9,   0,  10,   0,   0, 0x00 },
-    {  2368, 0x0070,   8,  12,   9,   1,  10,   0,   0, 0x00 },
-    {  2416, 0x0072,   6,   9,   9,   1,   6,   0,   0, 0x00 },
-    {  2443, 0x0073,   7,   9,   9,   0,   7,   0,   0, 0x00 },
-    {  2479, 0x0074,   6,  11,  11,   0,   6,   0,   0, 0x00 },
-    {  2512, 0x0075,   8,   9,   9,   1,  10,   0,   0, 0x00 },
-    {  2548, 0x0078,   8,   9,   9,   0,   8,   0,   0, 0x00 },
-    {  2584, 0x0079,   9,  12,   9,   0,   9,  12,   2, 0x00 }
+    {  2368, 0x0072,   6,   9,   9,   1,   6,   0,   0, 0x00 },
+    {  2395, 0x0073,   7,   9,   9,   0,   7,   0,   0, 0x00 },
+    {  2431, 0x0074,   6,  11,  11,   0,   6,   0,   0, 0x00 },
+    {  2464, 0x0075,   8,   9,   9,   1,  10,   0,   0, 0x00 },
+    {  2500, 0x0078,   8,   9,   9,   0,   8,   0,   0, 0x00 },
+    {  2536, 0x0079,   9,  12,   9,   0,   9,  12,   2, 0x00 }
 };
 
 // calibrib_18_4bpp
@@ -72,6 +71,6 @@ touchgfx::GeneratedFont& getFont_calibrib_18_4bpp();
 
 touchgfx::GeneratedFont& getFont_calibrib_18_4bpp()
 {
-    static touchgfx::GeneratedFont calibrib_18_4bpp(glyphs_calibrib_18_4bpp, 50, 21, 18, 0, 0, 4, 1, 0, 1, unicodes_calibrib_18_4bpp, kerning_calibrib_18_4bpp, 63, 0, 0, &calibrib_contextualFormsTable);
+    static touchgfx::GeneratedFont calibrib_18_4bpp(glyphs_calibrib_18_4bpp, 49, 21, 18, 0, 0, 4, 1, 0, 1, unicodes_calibrib_18_4bpp, kerning_calibrib_18_4bpp, 63, 0, 0, &calibrib_contextualFormsTable);
     return calibrib_18_4bpp;
 }

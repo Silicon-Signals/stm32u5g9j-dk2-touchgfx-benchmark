@@ -6,6 +6,6 @@
 
 static unsigned short SIM_WIDTH = 800;
 static unsigned short SIM_HEIGHT = 480;
-#define SIM_TITLE "Benchmark_demo"
+#define SIM_TITLE "STM32U5G9-DK2-Benchmark"
 
 #endif // SIMCONSTANTS_HPP

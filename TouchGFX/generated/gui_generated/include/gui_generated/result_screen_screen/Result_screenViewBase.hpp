@@ -38,8 +38,9 @@ protected:
     touchgfx::TextAreaWithOneWildcard Render_time_runtime;
     touchgfx::TextAreaWithOneWildcard CPU;
     touchgfx::TextAreaWithOneWildcard Render_time;
-    touchgfx::TextAreaWithOneWildcard Heap;
-    touchgfx::TextAreaWithOneWildcard Stack;
+    touchgfx::TextAreaWithOneWildcard Internal_Flash;
+    touchgfx::TextAreaWithOneWildcard External_Flash;
+    touchgfx::TextAreaWithOneWildcard RAM_usage;
     touchgfx::TextAreaWithOneWildcard FPS;
     touchgfx::TextArea Video_test_name;
     touchgfx::TextArea Image_test_name;
@@ -50,8 +51,9 @@ protected:
     touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  home_button;
     touchgfx::TextArea textArea1;
     touchgfx::TextArea FPS_text;
-    touchgfx::TextArea Stack_text;
-    touchgfx::TextArea Heap_text;
+    touchgfx::TextArea RAM_text;
+    touchgfx::TextArea Internal_Flash_text;
+    touchgfx::TextArea External_Flash_text;
     touchgfx::TextArea Render_time_text;
     touchgfx::TextArea CPU_text;
 
@@ -68,10 +70,12 @@ protected:
     touchgfx::Unicode::UnicodeChar CPUBuffer[CPU_SIZE];
     static const uint16_t RENDER_TIME_SIZE = 5;
     touchgfx::Unicode::UnicodeChar Render_timeBuffer[RENDER_TIME_SIZE];
-    static const uint16_t HEAP_SIZE = 5;
-    touchgfx::Unicode::UnicodeChar HeapBuffer[HEAP_SIZE];
-    static const uint16_t STACK_SIZE = 5;
-    touchgfx::Unicode::UnicodeChar StackBuffer[STACK_SIZE];
+    static const uint16_t INTERNAL_FLASH_SIZE = 5;
+    touchgfx::Unicode::UnicodeChar Internal_FlashBuffer[INTERNAL_FLASH_SIZE];
+    static const uint16_t EXTERNAL_FLASH_SIZE = 5;
+    touchgfx::Unicode::UnicodeChar External_FlashBuffer[EXTERNAL_FLASH_SIZE];
+    static const uint16_t RAM_USAGE_SIZE = 5;
+    touchgfx::Unicode::UnicodeChar RAM_usageBuffer[RAM_USAGE_SIZE];
     static const uint16_t FPS_SIZE = 5;
     touchgfx::Unicode::UnicodeChar FPSBuffer[FPS_SIZE];
 

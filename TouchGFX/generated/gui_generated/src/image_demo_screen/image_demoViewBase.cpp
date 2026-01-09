@@ -12,7 +12,7 @@ image_demoViewBase::image_demoViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    background.setPosition(0, 0, 800, 480);
+    background.setPosition(-2, -3, 800, 480);
     background.setColor(touchgfx::Color::getColorFromRGB(18, 41, 75));
     add(background);
 

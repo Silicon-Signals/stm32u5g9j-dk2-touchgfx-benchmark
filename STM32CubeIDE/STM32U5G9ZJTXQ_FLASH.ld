@@ -216,8 +216,15 @@ SECTIONS
 
   ExtFlashSection :
   {
+	PROVIDE(__ext_flash_start = .);
     *(ExtFlashSection ExtFlashSection.*)
     *(.gnu.linkonce.r.*)
     . = ALIGN(0x4);
+    PROVIDE(__ext_flash_end = .);
   } >EXT_FLASH
 }
+
+__framebuffer_start__ = ADDR(FramebufferSection);
+__framebuffer_end__   = ADDR(FramebufferSection) + SIZEOF(FramebufferSection);
+__videobuffer_start__ = ADDR(VideobufferSection);
+__videobuffer_end__   = ADDR(VideobufferSection) + SIZEOF(VideobufferSection);

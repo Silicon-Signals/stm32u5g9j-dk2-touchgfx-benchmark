@@ -13,12 +13,12 @@ Result_screenViewBase::Result_screenViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    background.setXY(0, 0);
+    background.setXY(2, -3);
     background.setBitmap(touchgfx::Bitmap(BITMAP_OBJECT_RESULT_ID));
     add(background);
 
     metrics_container.setPosition(690, 450, 110, 30);
-    box1.setPosition(0, 0, 110, 30);
+    box1.setPosition(0, -5, 110, 30);
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     box1.setAlpha(126);
     metrics_container.add(box1);
@@ -52,7 +52,7 @@ Result_screenViewBase::Result_screenViewBase() :
 
     add(metrics_container);
 
-    CPU.setXY(428, 329);
+    CPU.setXY(428, 317);
     CPU.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     CPU.setLinespacing(0);
     Unicode::snprintf(CPUBuffer, CPU_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_AFVY).getText());
@@ -61,7 +61,7 @@ Result_screenViewBase::Result_screenViewBase() :
     CPU.setTypedText(touchgfx::TypedText(T___SINGLEUSE_O6I8));
     add(CPU);
 
-    Render_time.setXY(428, 296);
+    Render_time.setXY(428, 281);
     Render_time.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Render_time.setLinespacing(0);
     Unicode::snprintf(Render_timeBuffer, RENDER_TIME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_WJRF).getText());
@@ -70,25 +70,34 @@ Result_screenViewBase::Result_screenViewBase() :
     Render_time.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VEM3));
     add(Render_time);
 
-    Heap.setXY(428, 260);
-    Heap.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Heap.setLinespacing(0);
-    Unicode::snprintf(HeapBuffer, HEAP_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VXAD).getText());
-    Heap.setWildcard(HeapBuffer);
-    Heap.resizeToCurrentText();
-    Heap.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NT68));
-    add(Heap);
+    Internal_Flash.setXY(428, 211);
+    Internal_Flash.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Internal_Flash.setLinespacing(0);
+    Unicode::snprintf(Internal_FlashBuffer, INTERNAL_FLASH_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VXAD).getText());
+    Internal_Flash.setWildcard(Internal_FlashBuffer);
+    Internal_Flash.resizeToCurrentText();
+    Internal_Flash.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NT68));
+    add(Internal_Flash);
 
-    Stack.setXY(428, 222);
-    Stack.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Stack.setLinespacing(0);
-    Unicode::snprintf(StackBuffer, STACK_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_GFGI).getText());
-    Stack.setWildcard(StackBuffer);
-    Stack.resizeToCurrentText();
-    Stack.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q895));
-    add(Stack);
+    External_Flash.setXY(429, 247);
+    External_Flash.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    External_Flash.setLinespacing(0);
+    Unicode::snprintf(External_FlashBuffer, EXTERNAL_FLASH_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_Z3KN).getText());
+    External_Flash.setWildcard(External_FlashBuffer);
+    External_Flash.resizeToCurrentText();
+    External_Flash.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PHCP));
+    add(External_Flash);
 
-    FPS.setXY(428, 187);
+    RAM_usage.setXY(428, 174);
+    RAM_usage.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    RAM_usage.setLinespacing(0);
+    Unicode::snprintf(RAM_usageBuffer, RAM_USAGE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6SOH).getText());
+    RAM_usage.setWildcard(RAM_usageBuffer);
+    RAM_usage.resizeToCurrentText();
+    RAM_usage.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OC63));
+    add(RAM_usage);
+
+    FPS.setXY(431, 139);
     FPS.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FPS.setLinespacing(0);
     Unicode::snprintf(FPSBuffer, FPS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_NR8E).getText());
@@ -97,42 +106,42 @@ Result_screenViewBase::Result_screenViewBase() :
     FPS.setTypedText(touchgfx::TypedText(T___SINGLEUSE_U2PI));
     add(FPS);
 
-    Video_test_name.setXY(428, 152);
+    Video_test_name.setXY(428, 102);
     Video_test_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Video_test_name.setLinespacing(0);
     Video_test_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SVA2));
     Video_test_name.setVisible(false);
     add(Video_test_name);
 
-    Image_test_name.setXY(425, 152);
+    Image_test_name.setXY(428, 102);
     Image_test_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Image_test_name.setLinespacing(0);
     Image_test_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BOHL));
     Image_test_name.setVisible(false);
     add(Image_test_name);
 
-    Static_test_name.setXY(428, 150);
+    Static_test_name.setXY(431, 102);
     Static_test_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Static_test_name.setLinespacing(0);
     Static_test_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EHCD));
     Static_test_name.setVisible(false);
     add(Static_test_name);
 
-    SVG_test_name.setXY(425, 152);
+    SVG_test_name.setXY(428, 103);
     SVG_test_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     SVG_test_name.setLinespacing(0);
     SVG_test_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LQ03));
     SVG_test_name.setVisible(false);
     add(SVG_test_name);
 
-    Text_scroll_test_name.setXY(428, 150);
+    Text_scroll_test_name.setXY(428, 102);
     Text_scroll_test_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Text_scroll_test_name.setLinespacing(0);
     Text_scroll_test_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SPC9));
     Text_scroll_test_name.setVisible(false);
     add(Text_scroll_test_name);
 
-    Cluster_test_name.setXY(428, 150);
+    Cluster_test_name.setXY(426, 101);
     Cluster_test_name.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Cluster_test_name.setLinespacing(0);
     Cluster_test_name.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FN08));
@@ -145,37 +154,43 @@ Result_screenViewBase::Result_screenViewBase() :
     home_button.setPosition(374, 387, 63, 66);
     add(home_button);
 
-    textArea1.setXY(165, 153);
+    textArea1.setXY(165, 102);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5360));
     add(textArea1);
 
-    FPS_text.setXY(165, 186);
+    FPS_text.setXY(165, 138);
     FPS_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FPS_text.setLinespacing(0);
     FPS_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EFF4));
     add(FPS_text);
 
-    Stack_text.setXY(165, 222);
-    Stack_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Stack_text.setLinespacing(0);
-    Stack_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_P0AJ));
-    add(Stack_text);
+    RAM_text.setXY(163, 172);
+    RAM_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    RAM_text.setLinespacing(0);
+    RAM_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_P0AJ));
+    add(RAM_text);
 
-    Heap_text.setXY(165, 260);
-    Heap_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Heap_text.setLinespacing(0);
-    Heap_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2G94));
-    add(Heap_text);
+    Internal_Flash_text.setXY(165, 209);
+    Internal_Flash_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Internal_Flash_text.setLinespacing(0);
+    Internal_Flash_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2G94));
+    add(Internal_Flash_text);
 
-    Render_time_text.setXY(165, 296);
+    External_Flash_text.setXY(163, 245);
+    External_Flash_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    External_Flash_text.setLinespacing(0);
+    External_Flash_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IY55));
+    add(External_Flash_text);
+
+    Render_time_text.setXY(163, 279);
     Render_time_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Render_time_text.setLinespacing(0);
     Render_time_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X1YP));
     add(Render_time_text);
 
-    CPU_text.setXY(165, 329);
+    CPU_text.setXY(165, 314);
     CPU_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     CPU_text.setLinespacing(0);
     CPU_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TN6S));

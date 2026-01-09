@@ -720,11 +720,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Low_fuel.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_Object_Result.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Object_Result.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_Si_Logo_Light.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Si_Logo_Light.cpp</locationURI>
@@ -973,6 +968,11 @@
 			<name>Application/User/generated/image_left_indicator_colored.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_left_indicator_colored.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_object_result.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_object_result.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_right_frame_000.cpp</name>

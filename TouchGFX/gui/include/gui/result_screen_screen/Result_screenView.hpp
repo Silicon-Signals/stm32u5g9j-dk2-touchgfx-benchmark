@@ -13,8 +13,9 @@ public:
     virtual void tearDownScreen();
 
     virtual void handleTickEvent();
-    void updateTextAreas(int fps, int stack, int cpu, int renderTime, int heap);
+    void updateTextAreas(int fps, int ram_usage, int internal_flash, int external_flash, int renderTime, int cpu);
     void updateruntime_metrics(int fps, int cpu, int renderTime);
+
 protected:
 };
 
