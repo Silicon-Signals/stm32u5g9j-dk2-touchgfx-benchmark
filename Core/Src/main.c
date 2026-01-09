@@ -161,6 +161,10 @@ int main(void)
   HAL_NVIC_SetPriority(LTDC_IRQn, 0, 0);		// Enable NVIC line interrupt
   HAL_NVIC_EnableIRQ(LTDC_IRQn);				// NVIC LTDC IRQ enable
 
+  CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  DWT->CYCCNT = 0;
+  DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+
   /* USER CODE END 2 */
 
   /* Init scheduler */

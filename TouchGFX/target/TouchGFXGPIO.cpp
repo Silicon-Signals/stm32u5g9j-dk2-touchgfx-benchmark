@@ -42,6 +42,7 @@ extern uint32_t frame_counter;
 extern uint32_t render_start_ms;
 extern uint32_t render_end_ms;
 extern uint32_t render_time;
+uint32_t diff;
 
 using namespace touchgfx;
 
@@ -66,7 +67,7 @@ void GPIO::set(GPIO_ID id)
 #endif
         break;
     case GPIO::RENDER_TIME:
-    	 render_start_ms = HAL_GetTick();
+	render_start_ms = DWT->CYCCNT;
 #if defined(RENDER_TIME_GPIO_Port) && defined(RENDER_TIME_Pin)
         HAL_GPIO_WritePin(RENDER_TIME_GPIO_Port, RENDER_TIME_Pin, GPIO_PIN_SET);
 #endif
@@ -97,8 +98,9 @@ void GPIO::clear(GPIO_ID id)
 #endif
         break;
     case GPIO::RENDER_TIME:
-    	 render_end_ms = HAL_GetTick();
-    	 render_time = render_end_ms - render_start_ms;
+	render_end_ms = DWT->CYCCNT;
+	diff = render_end_ms - render_start_ms;
+	render_time = diff / (SystemCoreClock / 1000);
 #if defined(RENDER_TIME_GPIO_Port) && defined(RENDER_TIME_Pin)
         HAL_GPIO_WritePin(RENDER_TIME_GPIO_Port, RENDER_TIME_Pin, GPIO_PIN_RESET);
 #endif
