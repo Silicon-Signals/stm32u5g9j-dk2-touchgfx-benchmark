@@ -30,9 +30,6 @@ void Text_Scroll_demoView::tearDownScreen()
 
 void Text_Scroll_demoView::handleTickEvent()
 {
-    static float scrollPosition = 0;                             // Current scroll offset (Y)
-    static bool scrollingDown = true;                            // Direction: true = down, false = up
-    static uint32_t tickCounter = 0;                             // Track total ticks
     const int32_t CONTENT_HEIGHT = 1548;                         // Height of textArea1
     const int32_t VIEWPORT_HEIGHT = 406;                         // Height of scrollableContainer1
     const int32_t MAX_SCROLL = CONTENT_HEIGHT - VIEWPORT_HEIGHT; // 1142

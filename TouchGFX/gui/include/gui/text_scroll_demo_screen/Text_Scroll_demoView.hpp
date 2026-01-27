@@ -16,6 +16,9 @@ public:
     void updateruntime_metrics(int fps, int cpu, int renderTime);
     
 protected:
+    float scrollPosition;
+    bool scrollingDown;
+    uint32_t tickCounter;
 };
 
 #endif // TEXT_SCROLL_DEMOVIEW_HPP
