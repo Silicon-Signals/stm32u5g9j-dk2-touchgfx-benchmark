@@ -296,7 +296,7 @@ void metrics_print(void)
         g_ram_usage = (((uint32_t)&_edata - (uint32_t)&_sdata) +
    			 ((uint32_t)&_ebss - (uint32_t)&_sbss) +
    			 ((uint32_t)&__framebuffer_end__ - (uint32_t)&__framebuffer_start__) +
-   			 ((uint32_t)&__videobuffer_end__ - (uint32_t)&__videobuffer_start__)) / 1048576;
+			 ((uint32_t)&__videobuffer_end__ - (uint32_t)&__videobuffer_start__)) / 1024;
         g_internal_flash = total_internal_flash_usage / 1024 ;
         g_external_flash = total_ext_flash_usage / 1048576 ;
 

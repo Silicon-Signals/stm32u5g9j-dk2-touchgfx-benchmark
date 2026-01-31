@@ -1707,7 +1707,7 @@
             "Name": "RAM_usage",
             "X": 428,
             "Y": 174,
-            "Width": 47,
+            "Width": 77,
             "Height": 18,
             "TextId": "__SingleUse_OC63",
             "TextRotation": "0",

@@ -13,6 +13,11 @@ void Text_Scroll_demoView::setupScreen()
 {
     Text_Scroll_demoViewBase::setupScreen();
 
+    // Reset all state
+    scrollPosition = 0.0f;
+	scrollingDown = true;
+	tickCounter = 0;
+
     // Ensure scrollable container is initialized at the top
     scrollableContainer1.doScroll(0, 0);
     scrollableContainer1.invalidate();
@@ -30,11 +35,11 @@ void Text_Scroll_demoView::tearDownScreen()
 
 void Text_Scroll_demoView::handleTickEvent()
 {
-    const int32_t CONTENT_HEIGHT = 1548;                         // Height of textArea1
-    const int32_t VIEWPORT_HEIGHT = 406;                         // Height of scrollableContainer1
-    const int32_t MAX_SCROLL = CONTENT_HEIGHT - VIEWPORT_HEIGHT; // 1142
-    const float SCROLL_SPEED = 4;                                // 4 pixels/tick (~240 pixels/sec)
-    const uint32_t TOTAL_DURATION_TICKS = 600;                   // 10 seconds at 60 FPS
+    const int32_t CONTENT_HEIGHT = 1548;
+    const int32_t VIEWPORT_HEIGHT = 406;
+    const int32_t MAX_SCROLL = CONTENT_HEIGHT - VIEWPORT_HEIGHT;
+    const float SCROLL_SPEED = 4;
+    const uint32_t TOTAL_DURATION_TICKS = 600;
 
     if (tickCounter < TOTAL_DURATION_TICKS)
     {
@@ -58,7 +63,7 @@ void Text_Scroll_demoView::handleTickEvent()
         scrollableContainer1.doScroll(0, static_cast<int32_t>(scrollDelta));
         scrollableContainer1.invalidate();
 
-        tickCounter++; // Increment tick counter
+        tickCounter++;
 
         if(demo_running)
         {
