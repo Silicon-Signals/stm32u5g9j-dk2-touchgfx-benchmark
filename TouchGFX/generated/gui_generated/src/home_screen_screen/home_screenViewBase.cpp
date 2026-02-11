@@ -115,8 +115,8 @@ home_screenViewBase::home_screenViewBase() :
     Start_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3U5U));
     add(Start_text);
 
-    metrics_container.setPosition(690, 450, 110, 30);
-    box1.setPosition(0, 0, 110, 30);
+    metrics_container.setPosition(690, 449, 110, 30);
+    box1.setPosition(-2, 0, 110, 30);
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     box1.setAlpha(126);
     metrics_container.add(box1);
@@ -149,6 +149,32 @@ home_screenViewBase::home_screenViewBase() :
     metrics_container.add(Render_time);
 
     add(metrics_container);
+
+    manual_text.setXY(82, 447);
+    manual_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    manual_text.setLinespacing(0);
+    manual_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PRZM));
+    add(manual_text);
+
+    auto_text.setXY(82, 446);
+    auto_text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    auto_text.setLinespacing(0);
+    auto_text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9JVI));
+    auto_text.setVisible(false);
+    add(auto_text);
+
+    manualdemo_button.setBitmaps(Bitmap(BITMAP_TOGGLE_LEFT_ID), Bitmap(BITMAP_TOGGLE_LEFT_ID));
+    manualdemo_button.setBitmapXY(0, 0);
+    manualdemo_button.setAction(flexButtonCallback);
+    manualdemo_button.setPosition(0, 438, 76, 39);
+    add(manualdemo_button);
+
+    autodemo_button.setBitmaps(Bitmap(BITMAP_TOGGLE_RIGHT_ID), Bitmap(BITMAP_TOGGLE_RIGHT_ID));
+    autodemo_button.setBitmapXY(0, 0);
+    autodemo_button.setVisible(false);
+    autodemo_button.setAction(flexButtonCallback);
+    autodemo_button.setPosition(0, 438, 76, 39);
+    add(autodemo_button);
 }
 
 home_screenViewBase::~home_screenViewBase()
@@ -270,6 +296,20 @@ void home_screenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButt
         //When cluster_demo clicked change screen to Cluster
         //Go to Cluster with no screen transition
         application().gotoClusterScreenNoTransition();
+    }
+    if (&src == &manualdemo_button)
+    {
+        //manual_button_clicked
+        //When manualdemo_button clicked call virtual function
+        //Call onManualButtonClicked
+        onManualButtonClicked();
+    }
+    if (&src == &autodemo_button)
+    {
+        //auto_button_clicked
+        //When autodemo_button clicked call virtual function
+        //Call onAutoButtonClicked
+        onAutoButtonClicked();
     }
 }
 

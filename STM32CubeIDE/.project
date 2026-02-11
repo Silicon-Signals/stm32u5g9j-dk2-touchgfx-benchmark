@@ -730,6 +730,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Si_Logo_Light_Trans.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_Toggle_left.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Toggle_left.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Toggle_right.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Toggle_right.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_batterry.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_batterry.cpp</locationURI>

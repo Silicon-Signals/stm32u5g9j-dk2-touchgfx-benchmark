@@ -113,10 +113,12 @@ const uint16_t BITMAP_SERVICE_ID = 103;
 const uint16_t BITMAP_SERVICE_COLORED_ID = 104;
 const uint16_t BITMAP_SI_LOGO_LIGHT_ID = 105;
 const uint16_t BITMAP_SI_LOGO_LIGHT_TRANS_ID = 106;
-const uint16_t BITMAP_UI_BG_ID = 107;
-const uint16_t BITMAP_UI_BUTTON_ID = 108;
-const uint16_t BITMAP_UI_BUTTON_CENTER_ID = 109;
-const uint16_t BITMAP_WHITE_BATTERY_ICON_ID = 110;
+const uint16_t BITMAP_TOGGLE_LEFT_ID = 107;
+const uint16_t BITMAP_TOGGLE_RIGHT_ID = 108;
+const uint16_t BITMAP_UI_BG_ID = 109;
+const uint16_t BITMAP_UI_BUTTON_ID = 110;
+const uint16_t BITMAP_UI_BUTTON_CENTER_ID = 111;
+const uint16_t BITMAP_WHITE_BATTERY_ICON_ID = 112;
 
 namespace BitmapDatabase
 {

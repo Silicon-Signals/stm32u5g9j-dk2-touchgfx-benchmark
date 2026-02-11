@@ -41,7 +41,6 @@ protected:
     touchgfx::TextAreaWithOneWildcard Internal_Flash;
     touchgfx::TextAreaWithOneWildcard External_Flash;
     touchgfx::TextAreaWithOneWildcard RAM_usage;
-    touchgfx::TextAreaWithOneWildcard FPS;
     touchgfx::TextArea Video_test_name;
     touchgfx::TextArea Image_test_name;
     touchgfx::TextArea Static_test_name;
@@ -50,7 +49,6 @@ protected:
     touchgfx::TextArea Cluster_test_name;
     touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  home_button;
     touchgfx::TextArea textArea1;
-    touchgfx::TextArea FPS_text;
     touchgfx::TextArea RAM_text;
     touchgfx::TextArea Internal_Flash_text;
     touchgfx::TextArea External_Flash_text;
@@ -76,8 +74,6 @@ protected:
     touchgfx::Unicode::UnicodeChar External_FlashBuffer[EXTERNAL_FLASH_SIZE];
     static const uint16_t RAM_USAGE_SIZE = 5;
     touchgfx::Unicode::UnicodeChar RAM_usageBuffer[RAM_USAGE_SIZE];
-    static const uint16_t FPS_SIZE = 5;
-    touchgfx::Unicode::UnicodeChar FPSBuffer[FPS_SIZE];
 
 private:
 

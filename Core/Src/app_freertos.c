@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * File Name          : app_freertos.c
-  * Description        : Code for freertos applications
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * File Name          : app_freertos.c
+ * Description        : Code for freertos applications
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -52,7 +52,6 @@ extern TIM_HandleTypeDef htim2;
 float percentage = 0;
 extern volatile uint32_t frame_counter;
 UBaseType_t StackUsage;
-
 // Render Time variables
 extern volatile uint32_t current_ms;
 extern volatile uint32_t render_time;
@@ -72,14 +71,13 @@ volatile bool demo_running = false;
 volatile bool demo_complete = false;
 volatile uint32_t sample_count = 0;
 #define NUM_SAMPLES 10
-uint32_t fps_samples[NUM_SAMPLES];
 uint32_t render_time_samples[NUM_SAMPLES];
 uint32_t cpu_usage_samples[NUM_SAMPLES];
 uint32_t ram_usage_samples[NUM_SAMPLES];
 uint32_t internal_flash_samples[NUM_SAMPLES];
 uint32_t external_flash_samples[NUM_SAMPLES];
 
-// RAM and Flash usage variables
+//RAM and Flash usage variables
 extern uint32_t __framebuffer_start__;
 extern uint32_t __framebuffer_end__;
 extern uint32_t __videobuffer_start__;
@@ -94,7 +92,6 @@ extern uint32_t __ext_flash_start;
 extern uint32_t nema_stencil_buffer_size;
 
 // NEW: Average values
-volatile uint32_t avg_fps = 0;
 volatile uint32_t avg_render_time = 0;
 volatile uint32_t avg_cpu_usage = 0;
 volatile uint32_t avg_ram_usage = 0;
@@ -280,10 +277,10 @@ void metrics_print(void)
     uint32_t elapsed_ms = current_ms - last_time;
 
     uint32_t flash_base = 0x08000000;
-    uint32_t data_size = (uint32_t)&_edata - (uint32_t)&_sdata;
-    uint32_t total_internal_flash_usage = ((uint32_t)&_sidata - flash_base) + data_size;
+	uint32_t data_size = (uint32_t)&_edata - (uint32_t)&_sdata;
+	uint32_t total_internal_flash_usage = ((uint32_t)&_sidata - flash_base) + data_size;
 
-    uint32_t total_ext_flash_usage = (uint32_t)&__ext_flash_end - (uint32_t)&__ext_flash_start;
+	uint32_t total_ext_flash_usage = (uint32_t)&__ext_flash_end - (uint32_t)&__ext_flash_start;
 
     if (elapsed_ms >= 1000)
     {
@@ -305,7 +302,6 @@ void metrics_print(void)
         {
             if (sample_count < NUM_SAMPLES)
             {
-                fps_samples[sample_count] = g_fps;
                 render_time_samples[sample_count] = g_render_time;
                 cpu_usage_samples[sample_count] = g_cpu_usage;
                 ram_usage_samples[sample_count] = g_ram_usage;
@@ -318,17 +314,15 @@ void metrics_print(void)
             if (sample_count >= NUM_SAMPLES)
             {
                 // Calculate averages
-                uint32_t sum_fps = 0, sum_render_time = 0, sum_cpu_usage = 0, sum_ram_usage = 0, sum_internal_flash = 0,  sum_external_flash = 0;
+                uint32_t sum_render_time = 0, sum_cpu_usage = 0, sum_ram_usage = 0, sum_internal_flash = 0,  sum_external_flash = 0;
                 for (uint32_t i = 0; i < NUM_SAMPLES; i++)
                 {
-                    sum_fps += fps_samples[i];
                     sum_render_time += render_time_samples[i];
                     sum_cpu_usage += cpu_usage_samples[i];
                     sum_ram_usage += ram_usage_samples[i];
                     sum_internal_flash += internal_flash_samples[i];
                     sum_external_flash += external_flash_samples[i];
                 }
-                avg_fps = sum_fps / NUM_SAMPLES;
                 avg_render_time = sum_render_time / NUM_SAMPLES;
                 avg_cpu_usage = sum_cpu_usage / NUM_SAMPLES;
                 avg_ram_usage = sum_ram_usage / NUM_SAMPLES;

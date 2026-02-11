@@ -322,13 +322,14 @@
             "Type": "Container",
             "Name": "metrics_container",
             "X": 690,
-            "Y": 450,
+            "Y": 449,
             "Width": 110,
             "Height": 30,
             "Components": [
               {
                 "Type": "Box",
                 "Name": "box1",
+                "X": -2,
                 "Width": 110,
                 "Height": 30,
                 "Alpha": 126
@@ -395,6 +396,74 @@
                   "UseBuffer": true,
                   "BufferSize": 5
                 }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "manual_text",
+            "X": 82,
+            "Y": 447,
+            "Width": 58,
+            "Height": 21,
+            "TextId": "__SingleUse_PRZM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "auto_text",
+            "X": 82,
+            "Y": 446,
+            "Width": 37,
+            "Height": 21,
+            "Visible": false,
+            "TextId": "__SingleUse_9JVI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "manualdemo_button",
+            "Y": 438,
+            "Width": 76,
+            "Height": 39,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "Toggle left.png",
+                "ImagePressed": "Toggle left.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "autodemo_button",
+            "Y": 438,
+            "Width": 76,
+            "Height": 39,
+            "Visible": false,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "Toggle right.png",
+                "ImagePressed": "Toggle right.png"
               }
             ]
           }
@@ -718,6 +787,28 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Cluster"
+            }
+          },
+          {
+            "InteractionName": "manual_button_clicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "manualdemo_button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "onManualButtonClicked"
+            }
+          },
+          {
+            "InteractionName": "auto_button_clicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "autodemo_button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "onAutoButtonClicked"
             }
           }
         ]
@@ -1531,8 +1622,6 @@
           {
             "Type": "Image",
             "Name": "background",
-            "X": 2,
-            "Y": -3,
             "Width": 800,
             "Height": 480,
             "RelativeFilename": "object_result.png"
@@ -1621,8 +1710,8 @@
           {
             "Type": "TextArea",
             "Name": "CPU",
-            "X": 428,
-            "Y": 317,
+            "X": 429,
+            "Y": 330,
             "Width": 35,
             "Height": 18,
             "TextId": "__SingleUse_O6I8",
@@ -1643,7 +1732,7 @@
             "Type": "TextArea",
             "Name": "Render_time",
             "X": 428,
-            "Y": 281,
+            "Y": 296,
             "Width": 43,
             "Height": 18,
             "TextId": "__SingleUse_VEM3",
@@ -1664,7 +1753,7 @@
             "Type": "TextArea",
             "Name": "Internal_Flash",
             "X": 428,
-            "Y": 211,
+            "Y": 222,
             "Width": 69,
             "Height": 18,
             "TextId": "__SingleUse_NT68",
@@ -1685,7 +1774,7 @@
             "Type": "TextArea",
             "Name": "External_Flash",
             "X": 429,
-            "Y": 247,
+            "Y": 260,
             "Width": 47,
             "Height": 18,
             "TextId": "__SingleUse_PHCP",
@@ -1705,8 +1794,8 @@
           {
             "Type": "TextArea",
             "Name": "RAM_usage",
-            "X": 428,
-            "Y": 174,
+            "X": 429,
+            "Y": 186,
             "Width": 77,
             "Height": 18,
             "TextId": "__SingleUse_OC63",
@@ -1725,30 +1814,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "FPS",
-            "X": 431,
-            "Y": 139,
-            "Width": 18,
-            "Height": 18,
-            "TextId": "__SingleUse_U2PI",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_NR8E",
-              "UseBuffer": true,
-              "BufferSize": 5
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "Video_test_name",
-            "X": 428,
-            "Y": 102,
+            "X": 429,
+            "Y": 152,
             "Width": 79,
             "Height": 21,
             "Visible": false,
@@ -1764,8 +1832,8 @@
           {
             "Type": "TextArea",
             "Name": "Image_test_name",
-            "X": 428,
-            "Y": 102,
+            "X": 429,
+            "Y": 152,
             "Width": 55,
             "Height": 21,
             "Visible": false,
@@ -1781,8 +1849,8 @@
           {
             "Type": "TextArea",
             "Name": "Static_test_name",
-            "X": 431,
-            "Y": 102,
+            "X": 429,
+            "Y": 152,
             "Width": 77,
             "Height": 21,
             "Visible": false,
@@ -1798,8 +1866,8 @@
           {
             "Type": "TextArea",
             "Name": "SVG_test_name",
-            "X": 428,
-            "Y": 103,
+            "X": 429,
+            "Y": 152,
             "Width": 66,
             "Height": 21,
             "Visible": false,
@@ -1816,7 +1884,7 @@
             "Type": "TextArea",
             "Name": "Text_scroll_test_name",
             "X": 428,
-            "Y": 102,
+            "Y": 152,
             "Width": 112,
             "Height": 21,
             "Visible": false,
@@ -1832,8 +1900,8 @@
           {
             "Type": "TextArea",
             "Name": "Cluster_test_name",
-            "X": 426,
-            "Y": 101,
+            "X": 428,
+            "Y": 152,
             "Width": 87,
             "Height": 21,
             "Visible": false,
@@ -1868,7 +1936,7 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 165,
-            "Y": 102,
+            "Y": 152,
             "Width": 31,
             "Height": 21,
             "TextId": "__SingleUse_5360",
@@ -1882,25 +1950,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "FPS_text",
-            "X": 165,
-            "Y": 138,
-            "Width": 128,
-            "Height": 21,
-            "TextId": "__SingleUse_EFF4",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "RAM_text",
-            "X": 163,
-            "Y": 172,
+            "X": 165,
+            "Y": 186,
             "Width": 87,
             "Height": 21,
             "TextId": "__SingleUse_P0AJ",
@@ -1916,7 +1968,7 @@
             "Type": "TextArea",
             "Name": "Internal_Flash_text",
             "X": 165,
-            "Y": 209,
+            "Y": 222,
             "Width": 151,
             "Height": 21,
             "TextId": "__SingleUse_2G94",
@@ -1931,8 +1983,8 @@
           {
             "Type": "TextArea",
             "Name": "External_Flash_text",
-            "X": 163,
-            "Y": 245,
+            "X": 165,
+            "Y": 260,
             "Width": 153,
             "Height": 21,
             "TextId": "__SingleUse_IY55",
@@ -1947,8 +1999,8 @@
           {
             "Type": "TextArea",
             "Name": "Render_time_text",
-            "X": 163,
-            "Y": 279,
+            "X": 165,
+            "Y": 296,
             "Width": 222,
             "Height": 21,
             "TextId": "__SingleUse_X1YP",
@@ -1964,7 +2016,7 @@
             "Type": "TextArea",
             "Name": "CPU_text",
             "X": 165,
-            "Y": 314,
+            "Y": 329,
             "Width": 90,
             "Height": 21,
             "TextId": "__SingleUse_TN6S",

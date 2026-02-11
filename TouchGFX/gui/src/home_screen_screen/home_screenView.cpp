@@ -12,9 +12,9 @@ void home_screenView::setupScreen()
     start_btn.setTouchable(false);
     updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
 
-    if (application().autoStartDemo)
+    if (application().StartButton)
     {
-        application().autoStartDemo = false; // reset flag
+        application().StartButton = false;
 
         // AUTO PRESS THE START BUTTON!
         runStartButtonAnimation();
@@ -24,6 +24,81 @@ void home_screenView::setupScreen()
 void home_screenView::tearDownScreen()
 {
     home_screenViewBase::tearDownScreen();
+}
+
+void home_screenView::onManualButtonClicked()
+{
+    // User selected AUTO mode
+    autoDemoMode = true;
+
+    // Swap buttons: hide manual, show Auto
+    manualdemo_button.setVisible(false);
+    manualdemo_button.invalidate();
+
+    autodemo_button.setVisible(true);
+    autodemo_button.invalidate();
+
+    auto_text.setVisible(true);
+    auto_text.invalidate();
+    manual_text.setVisible(false);
+    manual_text.invalidate();
+
+    // Hide demo buttons
+    Start_text.setVisible(true);
+    Start_text.invalidate();
+
+    video_demo.clearMoveAnimationEndedAction();
+    video_demo.startMoveAnimation(370, 210, 1, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+    video_demo.setVisible(false);
+    video_demo.invalidate();
+
+    image_demo.clearMoveAnimationEndedAction();
+    image_demo.startMoveAnimation(370, 210, 1, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+    image_demo.setVisible(false);
+    image_demo.invalidate();
+
+    static_demo.clearMoveAnimationEndedAction();
+    static_demo.startMoveAnimation(370, 210, 1, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+    static_demo.setVisible(false);
+    static_demo.invalidate();
+
+    SVG_demo.clearMoveAnimationEndedAction();
+    SVG_demo.startMoveAnimation(370, 210, 1, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+    SVG_demo.setVisible(false);
+    SVG_demo.invalidate();
+
+    Text_scroll_demo.clearMoveAnimationEndedAction();
+    Text_scroll_demo.startMoveAnimation(370, 210, 1, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+    Text_scroll_demo.setVisible(false);
+    Text_scroll_demo.invalidate();
+
+    close_btn.clearMoveAnimationEndedAction();
+    close_btn.startMoveAnimation(370, 210, 1, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+    close_btn.setVisible(false);
+    close_btn.invalidate();
+
+    cluster_demo.clearMoveAnimationEndedAction();
+    cluster_demo.startMoveAnimation(370, 210, 1, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+    cluster_demo.setVisible(false);
+    cluster_demo.invalidate();
+}
+
+void home_screenView::onAutoButtonClicked()
+{
+    // User selected Manual mode
+    autoDemoMode = false;
+
+    // Swap buttons: hide Auto, show Manual
+    manualdemo_button.setVisible(true);
+    manualdemo_button.invalidate();
+
+    autodemo_button.setVisible(false);
+    autodemo_button.invalidate();
+
+    auto_text.setVisible(false);
+    auto_text.invalidate();
+    manual_text.setVisible(true);
+    manual_text.invalidate();
 }
 
 void home_screenView::handleTickEvent()
@@ -52,70 +127,79 @@ void home_screenView::handleClickEvent(const touchgfx::ClickEvent &evt)
         int16_t dy = y - centerY;
 
         // Check if click is inside the circle
-        // Check if click is inside the circle
         if (dx * dx + dy * dy <= radius * radius)
         {
-            Start_text.setVisible(false);
-            Start_text.invalidate();
+            if (autoDemoMode)
+            {
+                // Start automatic sequence - no more manual clicks needed
+                application().startAutoDemo();
 
-            // display_video_demo
-            video_demo.setVisible(true);
-            video_demo.invalidate();
+                // Go directly to video demo screen
+                // application().gotovideo_demoScreenNoTransition();
+            }
+            else
+            {
+                Start_text.setVisible(false);
+                Start_text.invalidate();
 
-            // move_out_video_demo
-            video_demo.clearMoveAnimationEndedAction();
-            video_demo.startMoveAnimation(234, 313, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+                // display_video_demo
+                video_demo.setVisible(true);
+                video_demo.invalidate();
 
-            // display_image_demo
-            image_demo.setVisible(true);
-            image_demo.invalidate();
+                // move_out_video_demo
+                video_demo.clearMoveAnimationEndedAction();
+                video_demo.startMoveAnimation(234, 313, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
 
-            // move_out_image_demo
-            image_demo.clearMoveAnimationEndedAction();
-            image_demo.startMoveAnimation(203, 191, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+                // display_image_demo
+                image_demo.setVisible(true);
+                image_demo.invalidate();
 
-            // display_static_demo
-            static_demo.setVisible(true);
-            static_demo.invalidate();
+                // move_out_image_demo
+                image_demo.clearMoveAnimationEndedAction();
+                image_demo.startMoveAnimation(203, 191, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
 
-            // move_out_static_demo
-            static_demo.clearMoveAnimationEndedAction();
-            static_demo.startMoveAnimation(284, 64, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+                // display_static_demo
+                static_demo.setVisible(true);
+                static_demo.invalidate();
 
-            // display_SVG_demo
-            SVG_demo.setVisible(true);
-            SVG_demo.invalidate();
+                // move_out_static_demo
+                static_demo.clearMoveAnimationEndedAction();
+                static_demo.startMoveAnimation(284, 64, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
 
-            // move_out_SVG_demo
-            SVG_demo.clearMoveAnimationEndedAction();
-            SVG_demo.startMoveAnimation(447, 64, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+                // display_SVG_demo
+                SVG_demo.setVisible(true);
+                SVG_demo.invalidate();
 
-            // display_text_scroll_demo
-            Text_scroll_demo.setVisible(true);
-            Text_scroll_demo.invalidate();
+                // move_out_SVG_demo
+                SVG_demo.clearMoveAnimationEndedAction();
+                SVG_demo.startMoveAnimation(447, 64, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
 
-            // move_out_text_scroll_demo
-            Text_scroll_demo.clearMoveAnimationEndedAction();
-            Text_scroll_demo.startMoveAnimation(534, 191, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+                // display_text_scroll_demo
+                Text_scroll_demo.setVisible(true);
+                Text_scroll_demo.invalidate();
 
-            // display_close_btn
-            close_btn.setVisible(true);
-            close_btn.invalidate();
+                // move_out_text_scroll_demo
+                Text_scroll_demo.clearMoveAnimationEndedAction();
+                Text_scroll_demo.startMoveAnimation(534, 191, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
 
-            // move_out_close_btn
-            close_btn.clearMoveAnimationEndedAction();
-            close_btn.startMoveAnimation(370, 373, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+                // display_close_btn
+                close_btn.setVisible(true);
+                close_btn.invalidate();
 
-            // display_cluster_demo
-            cluster_demo.setVisible(true);
-            cluster_demo.invalidate();
+                // move_out_close_btn
+                close_btn.clearMoveAnimationEndedAction();
+                close_btn.startMoveAnimation(370, 373, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
 
-            // move_out_cluster_demo
-            cluster_demo.clearMoveAnimationEndedAction();
-            cluster_demo.startMoveAnimation(495, 320, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+                // display_cluster_demo
+                cluster_demo.setVisible(true);
+                cluster_demo.invalidate();
+
+                // move_out_cluster_demo
+                cluster_demo.clearMoveAnimationEndedAction();
+                cluster_demo.startMoveAnimation(495, 320, 48, touchgfx::EasingEquations::sineEaseIn, touchgfx::EasingEquations::sineEaseIn);
+            }
         }
     }
-
 }
 
 void home_screenView::updateruntime_metrics(int fps, int cpu, int renderTime)

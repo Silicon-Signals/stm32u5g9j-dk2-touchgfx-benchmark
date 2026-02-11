@@ -6,6 +6,12 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_9JVI" Alignment="Left" TypographyId="Default_bold">
+        <Translation Language="GB">Auto</Translation>
+      </Text>
+      <Text Id="__SingleUse_PRZM" Alignment="Left" TypographyId="Default_bold">
+        <Translation Language="GB">Manual</Translation>
+      </Text>
       <Text Id="__SingleUse_6SOH" Alignment="Left" TypographyId="number">
         <Translation Language="GB">00</Translation>
       </Text>
@@ -252,9 +258,6 @@
       <Text Id="__SingleUse_P0AJ" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">RAM Usage</Translation>
       </Text>
-      <Text Id="__SingleUse_EFF4" Alignment="Left" TypographyId="Default_bold">
-        <Translation Language="GB">Frame Rate (FPS)</Translation>
-      </Text>
       <Text Id="__SingleUse_5360" Alignment="Left" TypographyId="Default_bold">
         <Translation Language="GB">Test</Translation>
       </Text>
@@ -269,12 +272,6 @@
       </Text>
       <Text Id="__SingleUse_NT68" Alignment="Left" TypographyId="number">
         <Translation Language="GB">&lt;number&gt; KB       </Translation>
-      </Text>
-      <Text Id="__SingleUse_NR8E" Alignment="Left" TypographyId="number">
-        <Translation Language="GB">00</Translation>
-      </Text>
-      <Text Id="__SingleUse_U2PI" Alignment="Left" TypographyId="number">
-        <Translation Language="GB">&lt;number&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_AFVY" Alignment="Left" TypographyId="number">
         <Translation Language="GB">00</Translation>

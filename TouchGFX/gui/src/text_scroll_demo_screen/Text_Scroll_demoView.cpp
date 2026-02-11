@@ -38,8 +38,8 @@ void Text_Scroll_demoView::handleTickEvent()
     const int32_t CONTENT_HEIGHT = 1548;
     const int32_t VIEWPORT_HEIGHT = 406;
     const int32_t MAX_SCROLL = CONTENT_HEIGHT - VIEWPORT_HEIGHT;
-    const float SCROLL_SPEED = 4;
-    const uint32_t TOTAL_DURATION_TICKS = 600;
+    const float SCROLL_SPEED = 6;
+    const uint32_t TOTAL_DURATION_TICKS = 300;
 
     if (tickCounter < TOTAL_DURATION_TICKS)
     {

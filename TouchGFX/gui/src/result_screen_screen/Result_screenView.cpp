@@ -10,10 +10,22 @@ void Result_screenView::setupScreen()
 {
     Result_screenViewBase::setupScreen();
 
-    updateTextAreas(avg_fps, avg_ram_usage, avg_internal_flash,  avg_external_flash, avg_render_time, avg_cpu_usage);
+    updateTextAreas(avg_ram_usage, avg_internal_flash,  avg_external_flash, avg_render_time, avg_cpu_usage);
     updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
 
-    application().autoStartDemo = true;
+    application().StartButton = true;
+
+    // Hide home button during auto demo 
+    if (application().isAutoDemoRunning)  
+    {
+        home_button.setVisible(false);
+        home_button.invalidate();
+    }
+    else
+    {
+        home_button.setVisible(true);
+        home_button.invalidate();
+    }
 }
 
 void Result_screenView::tearDownScreen()
@@ -26,7 +38,7 @@ void Result_screenView::handleTickEvent()
     updateruntime_metrics(g_fps, g_cpu_usage, g_render_time);
 }
 
-void Result_screenView::updateTextAreas(int fps, int ram_usage, int internal_flash, int external_flash, int renderTime, int cpu)
+void Result_screenView::updateTextAreas(int ram_usage, int internal_flash, int external_flash, int renderTime, int cpu)
 {
     // Hide all Test name by default
     Video_test_name.setVisible(false);
@@ -63,9 +75,6 @@ void Result_screenView::updateTextAreas(int fps, int ram_usage, int internal_fla
         Cluster_test_name.setVisible(true);
         Cluster_test_name.invalidate();
     }
-
-    Unicode::snprintf(FPSBuffer, 10, "%d", fps);
-    FPS.invalidate();
 
     Unicode::snprintf(RAM_usageBuffer, 10, "%d", ram_usage);
     RAM_usage.invalidate();

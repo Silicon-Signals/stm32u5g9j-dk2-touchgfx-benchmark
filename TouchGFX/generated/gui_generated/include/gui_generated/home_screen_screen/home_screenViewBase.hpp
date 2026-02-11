@@ -23,6 +23,18 @@ public:
     virtual ~home_screenViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void onManualButtonClicked()
+    {
+        // Override and implement this function in home_screen
+    }
+    virtual void onAutoButtonClicked()
+    {
+        // Override and implement this function in home_screen
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -48,6 +60,10 @@ protected:
     touchgfx::TextAreaWithOneWildcard CPU_usage;
     touchgfx::TextAreaWithOneWildcard FPS;
     touchgfx::TextAreaWithOneWildcard Render_time;
+    touchgfx::TextArea manual_text;
+    touchgfx::TextArea auto_text;
+    touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  manualdemo_button;
+    touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  autodemo_button;
 
     /*
      * Wildcard Buffers
