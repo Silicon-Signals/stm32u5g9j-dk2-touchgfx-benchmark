@@ -155,11 +155,6 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-  // LTDC setup to enable Interrupt
-  __HAL_LTDC_ENABLE_IT(&hltdc, LTDC_IT_LI);		// Enable LTDC line interrupt
-  HAL_LTDC_ProgramLineEvent(&hltdc, 0);			// Select the line to trigger event
-  HAL_NVIC_SetPriority(LTDC_IRQn, 0, 0);		// Enable NVIC line interrupt
-  HAL_NVIC_EnableIRQ(LTDC_IRQn);				// NVIC LTDC IRQ enable
 
   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
   DWT->CYCCNT = 0;

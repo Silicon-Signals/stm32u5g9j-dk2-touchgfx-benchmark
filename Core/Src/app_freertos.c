@@ -111,7 +111,7 @@ osThreadId_t GUI_TaskHandle;
 const osThreadAttr_t GUI_Task_attributes = {
     .name = "GUI_Task",
     .priority = (osPriority_t)osPriorityNormal,
-    .stack_size = 8192 * 4};
+    .stack_size = 1024 * 4};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
