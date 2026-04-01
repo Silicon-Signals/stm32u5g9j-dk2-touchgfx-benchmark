@@ -4,7 +4,7 @@ This project is used to generate **benchmark results (Matrices)** on the **STM32
 
 ---
 
-# 1. Required Software
+## 1. Required Software
 
 Install the following software before building the project:
 
@@ -15,7 +15,7 @@ You can download STM32CubeIDE from the STMicroelectronics website.
 
 ---
 
-# 2. Clone the Repository
+## 2. Clone the Repository
 
 Clone the repository using the following command:
 
@@ -26,7 +26,7 @@ Or download the ZIP file
 
 ---
 
-# 3. SetUp and Run the Project
+## 3. SetUp and Run the Project
  
 - **Open the Project in STM32CubeIDE**
 
